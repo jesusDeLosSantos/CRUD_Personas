@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "flfF/tY0Fsw5KUrN4amy90LDT7NxPV7keTJ9iDqRfMJplhm4ZlYfdN4vnpyOCyE0ZcMimt7bNFnTsR1Yezgonw==",
+  "dgSpecHash": "lKn1sOwB8UtBycHUrIo7BljWN+SYyld3XYKPjSigaqiMj2pIK6ZPAsiz1o+huCJvjNts9GYYbzWzMwJlyb3Txw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
+  "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.10-rel-29722-00\\microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.12\\microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.8\\microsoft.netcore.platforms.3.1.8.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.8\\microsoft.netcore.platforms.3.1.8.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.universalwindowsplatform\\6.2.12\\microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.10-rel-29722-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.2.8-rel-29722-00\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.8-rel-29722-00.nupkg.sha512",
@@ -27,11 +27,11 @@
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.native.sharedlibrary\\2.2.8-rel-29722-00\\runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.8-rel-29722-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.12\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.12.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-x86.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0\\system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512"
+    "C:\\Users\\USER\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0\\system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

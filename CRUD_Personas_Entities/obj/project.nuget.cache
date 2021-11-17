@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HO5NNcEtJdD+GdhIeKoyWpSmik/Mu2sHk4w5FPWmLtxs5I/Xo5xe/KOHpSIlvK/xuHmFRZAEuDkThvEhq7yLFQ==",
+  "dgSpecHash": "6sgF1z7o8o7wvqJrG9n7CVIgkjAk+m+EaVodg8pOVyI/r974azpvvgAHdn9jBXwe8kd8l2BpHBrOkQpW4G+Y2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
+  "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jsantos\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
