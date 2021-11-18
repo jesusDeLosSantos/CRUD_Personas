@@ -9176,7 +9176,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Users\\jsantos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
@@ -9184,11 +9184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
+      "projectUniqueName": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
       "projectName": "CRUD_Personas_UWP",
-      "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "E:\\CRUD_Personas\\CRUD_Personas_UWP\\obj\\",
+      "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
+      "packagesPath": "C:\\Users\\jsantos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -9197,7 +9197,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jsantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -9212,11 +9212,11 @@
       "frameworks": {
         "uap10.0.17763": {
           "projectReferences": {
-            "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
-              "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
+            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
+              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
             },
-            "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-              "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
+            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
             }
           }
         }
