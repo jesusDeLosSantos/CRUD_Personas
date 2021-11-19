@@ -9,13 +9,13 @@ using Entities;
 namespace DAL
 {
 
-    public class ClaseListadoPersonaDAL
+    public class ClaseListadoPersonasDAL
     {
         private clsMyConnection myConnection;
         private SqlConnection sqlConnection;
         private ObservableCollection<clsPersona> listaPersonas;
 
-        public ClaseListadoPersonaDAL()
+        public ClaseListadoPersonasDAL()
         {
             myConnection = new clsMyConnection();
             listaPersonas = new ObservableCollection<clsPersona>();

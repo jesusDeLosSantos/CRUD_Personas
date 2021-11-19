@@ -6,13 +6,13 @@ using System.Collections.ObjectModel;
 
 namespace BL
 {
-    public class clsListadoPersonas_BL
+    public class clsListadoPersonasBL
     {
         public ObservableCollection <clsPersona> Personas { get; set; }
 
-        public clsListadoPersonas_BL()
+        public clsListadoPersonasBL()
         {
-            Personas = new clsListadoPersonas().listado;
+            Personas = new ClaseListadoPersonasDAL().getUsuariosCompletos();
         }
     }
 }
