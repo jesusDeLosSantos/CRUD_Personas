@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "b22t3WPIU01fHpHp5AarlvBTMUEV4o8sZZpMCW5tjEqqL8eYLfs+dzrm5ie7Ayl9QRpRCjZJFVywerPYSeL0vQ==",
+=======
+  "dgSpecHash": "EBpBw09SR/FA+BfFpMoTP3EXJmxQI5b87vomLNin8EaJrRvHd/GTso0GzIw/u1r6evG4LedwJMVZ/Zx+Lwt0tQ==",
+>>>>>>> Stashed changes
   "success": true,
-  "projectFilePath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
+  "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
