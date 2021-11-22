@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRUD_Personas_DAL.Gestoras;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using CRUD_Personas_Entities;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
@@ -24,7 +26,23 @@ namespace CRUD_Personas_UWP
     {
         public MainPage()
         {
+
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GestoraAccionesDepartamentosDAL.deleteDepartamentoDAL(3);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            GestoraAccionesDepartamentosDAL.alterDepartamentoDAL(new clsDepartamento());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            GestoraAccionesDepartamentosDAL.addDepartamentoDAL(new clsDepartamento("fuck"));
         }
     }
 }

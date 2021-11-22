@@ -1,8 +1,8 @@
-﻿using Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using DAL;
 using System.Collections.ObjectModel;
+using CRUD_Personas_Entities;
 
 namespace BL
 {

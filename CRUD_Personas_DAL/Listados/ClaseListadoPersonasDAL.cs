@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
+using CRUD_Personas_Entities;
 using DAL;
-using Entities;
 
 
 

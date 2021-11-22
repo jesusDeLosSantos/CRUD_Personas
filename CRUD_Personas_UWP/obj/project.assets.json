@@ -9171,6 +9171,7 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.17763": [
       "CRUD_Personas_BL >= 1.0.0",
+      "CRUD_Personas_DAL >= 1.0.0",
       "CRUD_Personas_Entities >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.12"
     ]
@@ -9214,6 +9215,9 @@
           "projectReferences": {
             "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
               "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
+            },
+            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
+              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
             },
             "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
               "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"

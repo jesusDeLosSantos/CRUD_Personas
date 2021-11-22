@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Entities
+namespace CRUD_Personas_Entities
 {
     public class clsPersona
     {
@@ -10,7 +10,7 @@ namespace Entities
         private String apellidos;
         private DateTime fechaNacimiento;
         //Para fotos
-        //private string foto;
+        private string foto;
         //private byte[] foto;
         private String direccion;
         private String telefono;
@@ -55,7 +55,23 @@ namespace Entities
             get { return telefono; }
             set { telefono = value; }
         }
+
+        public int IdDepartamento
+        {
+            get { return idDepartamento; }
+            set { idDepartamento = value; }
+        }
+
+
+        public String Foto
+        {
+            get { return foto; }
+            set { foto = value; }
+        }
         #endregion
+
+
+
         #region constructores
         // constructor con parametors
         public clsPersona(String nombre)
@@ -72,6 +88,20 @@ namespace Entities
             Apellidos = apellidos;
             Nombre = nombre;
         }
+
+        public clsPersona(String nombre, String apellidos, DateTime fechaNacimiento, String foto, String direccion, String telefono, int idDepartamento) 
+        {
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.FechaNacimiento = fechaNacimiento;
+            this.Foto = foto;
+            this.Direccion = direccion;
+            this.Telefono = telefono;
+            this.idDepartamento = idDepartamento;
+        }
+
+
+
         #endregion
         #region metodos
         public override string ToString()

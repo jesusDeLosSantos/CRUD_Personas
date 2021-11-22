@@ -1,6 +1,5 @@
 ﻿using CRUD_Personas_Entities;
 using DAL;
-using Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
