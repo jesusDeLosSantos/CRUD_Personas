@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using CRUD_Personas_Entities;
+using CRUD_Personas_UWP.Views;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
@@ -32,7 +33,8 @@ namespace CRUD_Personas_UWP
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GestoraAccionesDepartamentosDAL.deleteDepartamentoDAL(3);
+            //GestoraAccionesDepartamentosDAL.deleteDepartamentoDAL(3);
+            this.Frame.Navigate(typeof(Page2));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

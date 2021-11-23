@@ -5,13 +5,14 @@
     xmlns:local="using:CRUD_Personas_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:CRUD_Personas_UWP.ViewModels"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
-    <!--<Page.DataContext>
-        <vm:Ej4ViewModel />
-    </Page.DataContext>-->
+    <Page.DataContext>
+        <vm:Page2VM/>
+    </Page.DataContext>
     <RelativePanel>
         <Grid Name="listaDePersonas" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
             <Grid.ColumnDefinitions>
@@ -21,7 +22,7 @@
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaPersonas}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding OPersonaSeleccionada , Mode=TwoWay}">
+            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaFiltrada}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding OPersonaSeleccionada , Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -32,7 +33,7 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-        <Grid RelativePanel.RightOf="listaDePersonas" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Background="#FFEBCD" BorderBrush="#FFEBCD">
+        <Grid RelativePanel.RightOf="listaDePersonas" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRUD_Personas_BL\CRUD_Personas_BL.csproj" />
+    <ProjectReference Include="..\CRUD_Personas_Entities\CRUD_Personas_Entities.csproj" />
+  </ItemGroup>
+
 </Project>

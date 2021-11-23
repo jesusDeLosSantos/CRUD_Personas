@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BL;
 
 namespace CRUD_Personas_ASP.Controllers
 {
@@ -20,7 +21,7 @@ namespace CRUD_Personas_ASP.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new clsListadoPersonasBL().Personas);
         }
 
         public IActionResult Privacy()
