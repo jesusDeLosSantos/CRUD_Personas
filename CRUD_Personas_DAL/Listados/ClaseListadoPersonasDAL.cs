@@ -33,7 +33,7 @@ namespace DAL
 
             try 
             {
-                if (reader.Read())
+                if (reader.HasRows)
                 {
                     while (reader.Read())
                     {

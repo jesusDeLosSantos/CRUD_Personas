@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Page2VM.cs" />
+    <Compile Include="ViewModels\utillities\clsVMBase.cs" />
+    <Compile Include="ViewModels\utillities\DelegateCommand.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -163,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\utillities\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CRUD_Personas_BL\CRUD_Personas_BL.csproj">

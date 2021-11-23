@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using CRUD_Personas_Entities;
 using DAL;
-using Entities;
 
 namespace Ejercicio2.Models
 {
@@ -18,8 +18,8 @@ namespace Ejercicio2.Models
             listaDAL = new ClaseListadoPersonaDAL();
         }
 
-        public ObservableCollection<clsPersona> GetListadoClsPersonas() {
-            return listaDAL.getUsuariosCompletos();
-        }
+        //public ObservableCollection<clsPersona> GetListadoClsPersonas() {
+        //    return listaDAL.getUsuariosCompletos();
+        //}
     }
 }

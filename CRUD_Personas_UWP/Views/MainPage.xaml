@@ -10,7 +10,7 @@
 
     <RelativePanel>
         <Button Click="Button_Click" x:Name="x"/>
-        <Button Click="Button_Click_1" RelativePanel.Below="x" x:Name="y"/>
-        <Button Click="Button_Click_2" RelativePanel.Below="y"/>
+        <!--<Button Click="Button_Click_1" RelativePanel.Below="x" x:Name="y"/>
+        <Button Click="Button_Click_2" RelativePanel.Below="y"/>-->
     </RelativePanel>
 </Page>
