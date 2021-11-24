@@ -6,6 +6,7 @@ namespace CRUD_Personas_Entities
     public class clsPersona
     {
         #region atributos privados
+        private int id;
         private String nombre;
         private String apellidos;
         private DateTime fechaNacimiento;
@@ -18,7 +19,10 @@ namespace CRUD_Personas_Entities
         #endregion
         #region propiedades publicas
         //public String Nombre(get; set;) estos son propiedades autoimplementadas, si ponemos esto, borramos el private String nombre de arriba
-        public int Id { get; set; }
+        public int Id {
+            get { return id; }
+            set { id = value; }
+        }
         public DateTime FechaNacimiento
         {
             get { return fechaNacimiento; }
@@ -87,6 +91,20 @@ namespace CRUD_Personas_Entities
         {
             Apellidos = apellidos;
             Nombre = nombre;
+            FechaNacimiento = DateTime.Now;
+            Direccion = "";
+            Telefono = "";
+            Foto = "";
+            IdDepartamento = 1;
+        }
+
+        public clsPersona(int id, String nombre, String apellidos)
+        {
+            this.id= id;
+            this.apellidos = apellidos;
+            this.nombre = nombre;
+            this.fechaNacimiento = DateTime.Now;
+            this.telefono = "1";
         }
 
         public clsPersona(String nombre, String apellidos, DateTime fechaNacimiento, String foto, String direccion, String telefono, int idDepartamento) 

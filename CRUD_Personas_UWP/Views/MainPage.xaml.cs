@@ -36,15 +36,5 @@ namespace CRUD_Personas_UWP
             //GestoraAccionesDepartamentosDAL.deleteDepartamentoDAL(3);
             this.Frame.Navigate(typeof(Page2));
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            GestoraAccionesDepartamentosDAL.alterDepartamentoDAL(new clsDepartamento());
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            GestoraAccionesDepartamentosDAL.addDepartamentoDAL(new clsDepartamento("fuck"));
-        }
     }
 }
