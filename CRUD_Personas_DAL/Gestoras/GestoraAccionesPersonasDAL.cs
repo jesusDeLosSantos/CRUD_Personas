@@ -58,11 +58,12 @@ namespace CRUD_Personas_DAL.Gestoras
 
             int resultado = 0;
 
-            SqlConnection conexion = new SqlConnection();
+            SqlConnection conexion;
             clsMyConnection miConexion = new clsMyConnection();
             SqlCommand miComando = new SqlCommand();
-
             conexion = miConexion.getConnection();
+
+            
 
             try
             {
@@ -73,7 +74,8 @@ namespace CRUD_Personas_DAL.Gestoras
                 miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
                 miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
                 miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
-                miComando.CommandText = "INSERT INTO Personas VALUES (@nombrePersona, @apellidosPersona, @fechaNacimiento, @telefono, @direccion, @IDDepartamento)";
+                miComando.CommandText = "INSERT INTO Personas (nombrePersona, apellidosPersona, fechaNacimiento, telefono, direccion, IDDepartamento, foto) VALUES (@nombrePersona, @apellidosPersona, @fechaNacimiento, @telefono, @direccion, @IDDepartamento, @foto)";
+                
                 miComando.Connection = conexion;
 
                 resultado = miComando.ExecuteNonQuery();
@@ -96,7 +98,7 @@ namespace CRUD_Personas_DAL.Gestoras
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Devuelve un entero que corresponde a las filas afectadas</returns>
-        public static int alterDepartamentoDAL(clsPersona persona)
+        public static int alterPersonaDAL(clsPersona persona)
         {
 
             int resultado = 0;
@@ -109,6 +111,7 @@ namespace CRUD_Personas_DAL.Gestoras
 
             try
             {
+                miComando.Parameters.Add(new SqlParameter("@id", persona.Id));
                 miComando.Parameters.Add(new SqlParameter("@nombrePersona", persona.Nombre));
                 miComando.Parameters.Add(new SqlParameter("@apellidosPersona", persona.Apellidos));
                 miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", persona.FechaNacimiento));
@@ -116,7 +119,7 @@ namespace CRUD_Personas_DAL.Gestoras
                 miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
                 miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
                 miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
-                miComando.CommandText = "UPDATE Personas SET nombrePersona = @nombrePersona, apellidosPersona = @apellidosPersona, fechaNacimiento = @fechaNacimiento, telefono = @telefono, direccion = @direccion, IDDepartamento = @IDDepartamento, Foto = @foto WHERE IDDepartamento = @id";
+                miComando.CommandText = "UPDATE Personas SET nombrePersona = @nombrePersona, apellidosPersona = @apellidosPersona, fechaNacimiento = @fechaNacimiento, telefono = @telefono, direccion = @direccion, IDDepartamento = @IDDepartamento, Foto = @foto WHERE IDPersona = @id";
                 miComando.Connection = conexion;
 
                 resultado = miComando.ExecuteNonQuery();

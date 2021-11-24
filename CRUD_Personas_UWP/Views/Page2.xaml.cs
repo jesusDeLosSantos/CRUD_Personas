@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CRUD_Personas_DAL.Gestoras;
+using CRUD_Personas_Entities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,16 @@ namespace CRUD_Personas_UWP.Views
         public Page2()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            GestoraAccionesPersonasDAL.alterPersonaDAL(new clsPersona(4, "Bug", "Fernandez"));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            GestoraAccionesPersonasDAL.addPersonaDAL(new clsPersona("Buck", "Fernandez"));
         }
     }
 }
