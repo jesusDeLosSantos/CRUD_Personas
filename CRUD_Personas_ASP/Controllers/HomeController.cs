@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using BL;
+using CRUD_Personas_Entities;
+using CRUD_Personas_BL.Listados;
 
 namespace CRUD_Personas_ASP.Controllers
 {
@@ -20,6 +22,21 @@ namespace CRUD_Personas_ASP.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View(new clsListadoPersonasBL().Personas);
+        }
+
+        public IActionResult Create()
+        {
+            return View(new clsPersonaListaDepartamentos(new clsListadoDepartamentosBL().Departamentos));
+        }
+
+        public IActionResult Edit()
+        {
+            return View(new clsListadoPersonasBL().Personas);
+        }
+
+        public IActionResult Delete()
         {
             return View(new clsListadoPersonasBL().Personas);
         }
