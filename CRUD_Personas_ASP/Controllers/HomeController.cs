@@ -26,21 +26,6 @@ namespace CRUD_Personas_ASP.Controllers
             return View(new clsListadoPersonasBL().Personas);
         }
 
-        public IActionResult Create()
-        {
-            return View(new clsPersonaListaDepartamentos(new clsListadoDepartamentosBL().Departamentos));
-        }
-
-        public IActionResult Edit()
-        {
-            return View(new clsListadoPersonasBL().Personas);
-        }
-
-        public IActionResult Delete()
-        {
-            return View(new clsListadoPersonasBL().Personas);
-        }
-
         public IActionResult Privacy()
         {
             return View();

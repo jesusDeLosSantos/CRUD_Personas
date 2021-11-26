@@ -67,14 +67,70 @@ namespace CRUD_Personas_DAL.Gestoras
 
             try
             {
-                miComando.Parameters.Add(new SqlParameter("@nombrePersona", persona.Nombre));
-                miComando.Parameters.Add(new SqlParameter("@apellidosPersona", persona.Apellidos));
-                miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", persona.FechaNacimiento));
-                miComando.Parameters.Add(new SqlParameter("@telefono", persona.Telefono));
-                miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
-                miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
-                miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
-                miComando.CommandText = "INSERT INTO Personas (nombrePersona, apellidosPersona, fechaNacimiento, telefono, direccion, IDDepartamento, foto) VALUES (@nombrePersona, @apellidosPersona, @fechaNacimiento, @telefono, @direccion, @IDDepartamento, @foto)";
+                if (persona.Nombre == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@nombrePersona", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@nombrePersona", persona.Nombre));
+                }
+
+                if (persona.Apellidos == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@apellidosPersona", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@apellidosPersona", persona.Apellidos));
+                }
+                
+                if (persona.FechaNacimiento == DateTime.MinValue)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", persona.FechaNacimiento));
+                }
+
+                if (persona.Telefono == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@telefono", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@telefono", persona.Telefono));
+                }
+
+                if (persona.Direccion == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@direccion", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
+                }
+
+                if (persona.IdDepartamento == 0)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@IDDepartemento", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
+                }
+
+                if (persona.Foto == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@foto", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
+                }
+                
+                miComando.CommandText = "INSERT INTO Personas VALUES (@nombrePersona, @apellidosPersona, @fechaNacimiento, @telefono, @direccion, @IDDepartamento, @foto)";
                 
                 miComando.Connection = conexion;
 
@@ -111,14 +167,68 @@ namespace CRUD_Personas_DAL.Gestoras
 
             try
             {
-                miComando.Parameters.Add(new SqlParameter("@id", persona.Id));
-                miComando.Parameters.Add(new SqlParameter("@nombrePersona", persona.Nombre));
-                miComando.Parameters.Add(new SqlParameter("@apellidosPersona", persona.Apellidos));
-                miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", persona.FechaNacimiento));
-                miComando.Parameters.Add(new SqlParameter("@telefono", persona.Telefono));
-                miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
-                miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
-                miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
+                if (persona.Nombre == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@nombrePersona", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@nombrePersona", persona.Nombre));
+                }
+
+                if (persona.Apellidos == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@apellidosPersona", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@apellidosPersona", persona.Apellidos));
+                }
+
+                if (persona.FechaNacimiento == DateTime.MinValue)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@fechaNacimiento", persona.FechaNacimiento));
+                }
+
+                if (persona.Telefono == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@telefono", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@telefono", persona.Telefono));
+                }
+
+                if (persona.Direccion == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@direccion", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@direccion", persona.Direccion));
+                }
+
+                if (persona.IdDepartamento == 0)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@IDDepartemento", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@IDDepartamento", persona.IdDepartamento));
+                }
+
+                if (persona.Foto == null)
+                {
+                    miComando.Parameters.Add(new SqlParameter("@foto", System.DBNull.Value));
+                }
+                else
+                {
+                    miComando.Parameters.Add(new SqlParameter("@foto", persona.Foto));
+                }
                 miComando.CommandText = "UPDATE Personas SET nombrePersona = @nombrePersona, apellidosPersona = @apellidosPersona, fechaNacimiento = @fechaNacimiento, telefono = @telefono, direccion = @direccion, IDDepartamento = @IDDepartamento, Foto = @foto WHERE IDPersona = @id";
                 miComando.Connection = conexion;
 
