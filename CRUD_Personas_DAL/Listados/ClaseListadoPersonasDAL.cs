@@ -14,11 +14,13 @@ namespace DAL
         private clsMyConnection myConnection;
         private SqlConnection sqlConnection;
         private ObservableCollection<clsPersona> listaPersonas;
+        private clsPersona persona;
 
         public ClaseListadoPersonasDAL()
         {
             myConnection = new clsMyConnection();
             listaPersonas = new ObservableCollection<clsPersona>();
+            persona = new clsPersona();
         }
 
         public ObservableCollection<clsPersona> getUsuariosCompletos()
@@ -56,6 +58,45 @@ namespace DAL
             catch (Exception e) { }
 
             return listaPersonas;
+        }
+
+
+        public clsPersona getUsuario(int id)
+        {
+            clsPersona oPersona;
+            SqlCommand command = new SqlCommand();
+            sqlConnection = myConnection.getConnection();
+            SqlDataReader reader;
+            command.CommandText = "SELECT * FROM Personas WHERE Id= @id";
+            command.Connection = sqlConnection;
+            reader = command.ExecuteReader();
+            oPersona = new clsPersona();
+
+            try
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        command.Parameters.Add(new SqlParameter("@id", oPersona.Id));
+                        oPersona.Id = (int)reader["IDPersona"];
+                        oPersona.Nombre = (string)reader["nombrePersona"];
+                        oPersona.Apellidos = (string)reader["apellidosPersona"];
+                        oPersona.Direccion = (string)reader["direccion"];
+                        oPersona.Telefono = (string)reader["telefono"];
+                        if (reader["fechaNacimiento"] != System.DBNull.Value)
+                        {
+                            oPersona.FechaNacimiento = (DateTime)reader["fechaNacimiento"];
+                        }
+                        
+                    }
+                }
+                reader.Close();
+                sqlConnection.Close();
+            }
+            catch (Exception e) { }
+
+            return oPersona;
         }
     }
 }

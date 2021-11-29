@@ -91,11 +91,6 @@ namespace CRUD_Personas_Entities
         {
             Apellidos = apellidos;
             Nombre = nombre;
-            FechaNacimiento = DateTime.Now;
-            Direccion = "";
-            Telefono = "";
-            Foto = "";
-            IdDepartamento = 1;
         }
 
         public clsPersona(int id, String nombre, String apellidos)
