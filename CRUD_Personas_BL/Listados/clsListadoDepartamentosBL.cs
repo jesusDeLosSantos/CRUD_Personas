@@ -10,6 +10,13 @@ namespace CRUD_Personas_BL.Listados
     public class clsListadoDepartamentosBL
     {
         public ObservableCollection<clsDepartamento> Departamentos { get; set; }
+        public clsDepartamento Departamento { get; set; }
+
+        public clsListadoDepartamentosBL(int id)
+        {
+            Departamentos = new ClaseListadoDepartamentosDAL().getDepartamentosCompletos();
+            Departamento = new ClaseListadoDepartamentosDAL().getDepartamento(id);
+        }
 
         public clsListadoDepartamentosBL()
         {

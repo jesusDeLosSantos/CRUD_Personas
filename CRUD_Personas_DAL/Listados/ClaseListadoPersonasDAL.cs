@@ -67,18 +67,18 @@ namespace DAL
             SqlCommand command = new SqlCommand();
             sqlConnection = myConnection.getConnection();
             SqlDataReader reader;
-            command.CommandText = "SELECT * FROM Personas WHERE Id= @id";
+            command.Parameters.Add(new SqlParameter("@id", id));
+            command.CommandText = "SELECT * FROM Personas WHERE IDPersona= @id";
             command.Connection = sqlConnection;
-            reader = command.ExecuteReader();
             oPersona = new clsPersona();
+            reader = command.ExecuteReader();
 
             try
             {
                 if (reader.HasRows)
                 {
                     while (reader.Read())
-                    {
-                        command.Parameters.Add(new SqlParameter("@id", oPersona.Id));
+                    {                    
                         oPersona.Id = (int)reader["IDPersona"];
                         oPersona.Nombre = (string)reader["nombrePersona"];
                         oPersona.Apellidos = (string)reader["apellidosPersona"];
@@ -88,7 +88,7 @@ namespace DAL
                         {
                             oPersona.FechaNacimiento = (DateTime)reader["fechaNacimiento"];
                         }
-                        
+                       
                     }
                 }
                 reader.Close();

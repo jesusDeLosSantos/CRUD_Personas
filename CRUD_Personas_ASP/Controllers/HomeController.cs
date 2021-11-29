@@ -25,27 +25,27 @@ namespace CRUD_Personas_ASP.Controllers
 
         public IActionResult Index()
         {
-            return View(new VM_ListadoPersona().GetListadoClsPersonas());
+            return View(new VM_ListadoPersonas().GetListadoClsPersonas());
         }
 
         public IActionResult Create()
         {
-            return View(new VM_CreatePersonaListaDepartamentos());
+            return View(new VM_PersonaListaDepartamentos());
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            return View(new VM_PersonaNombreDepartamento(id));
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            return View(new VM_PersonaNombreDepartamento(id));
         }
 
         public IActionResult Edit(int id)
         {
-            return View(new VM_CreatePersonaListaDepartamentos(id));
+            return View(new VM_PersonaListaDepartamentos(id));
         }
 
         public IActionResult Privacy()
