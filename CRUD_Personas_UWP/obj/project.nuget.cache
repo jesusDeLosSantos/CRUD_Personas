@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "KOO8bCJd1SCO9Ot4RYWOsFDY6pIqeduPCWh3AvJMUQOpa8v2a4WiXaLWorYSTvCC74z0cm3Zf/lLwlKNAzU/jA==",
-=======
-  "dgSpecHash": "Hp/L8VJvDvPlh2TV7Zt9vq4BUHjXhHYAJIezJrtQIeDyN8h3A+PsbfJDO5CN4vtRPf317aTYJtLJ1oiqKkps4w==",
->>>>>>> Stashed changes
+  "dgSpecHash": "lx4WjiweB6E5F94gAoZkMMf53PRiPwS4Fh+GPWaoUItJJFIEaz7TZm0bdbX35huxjBZtnpsi1jTUmlaq2szGbQ==",
   "success": true,
   "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_UWP\\CRUD_Personas_UWP.csproj",
   "expectedPackageFiles": [
@@ -37,5 +33,12 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0\\system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché E:\\CRUD_Personas\\CRUD_Personas_UWP\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

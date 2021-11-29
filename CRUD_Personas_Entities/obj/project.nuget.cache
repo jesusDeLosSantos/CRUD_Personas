@@ -1,15 +1,18 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "AIA84slOCJnsw2MaHo5yWkD/Tj5P/CvCgVchrRXZHcFB9mxMg+piTctUJrJ/CGWBW85WiPwyvqNaLAxnt7atJw==",
-=======
   "dgSpecHash": "xMor/FdX0NyV58mB/G0c/mdCmu0PaPdP/k+uRkJTesZNIrnLacEZLM76i2hJS4UHpYWYxykIeaUpMy+3/oKo8A==",
->>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché E:\\CRUD_Personas\\CRUD_Personas_Entities\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

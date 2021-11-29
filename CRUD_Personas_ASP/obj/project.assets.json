@@ -6737,11 +6737,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
-              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
+            "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
+              "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
             },
-            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
+            "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+              "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
             }
           }
         }
@@ -6782,5 +6782,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché E:\\CRUD_Personas\\CRUD_Personas_ASP\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

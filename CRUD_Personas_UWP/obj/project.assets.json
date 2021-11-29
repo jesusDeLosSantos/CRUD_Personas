@@ -9216,16 +9216,11 @@
             "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
               "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
             },
-<<<<<<< Updated upstream
-            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
-              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
+            "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
+              "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
             },
-            "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-              "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
-=======
             "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
               "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
->>>>>>> Stashed changes
             }
           }
         }
@@ -9269,5 +9264,13 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché E:\\CRUD_Personas\\CRUD_Personas_UWP\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
