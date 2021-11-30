@@ -162,6 +162,7 @@ namespace CRUD_Personas_DAL.Gestoras
             SqlConnection conexion = new SqlConnection();
             clsMyConnection miConexion = new clsMyConnection();
             SqlCommand miComando = new SqlCommand();
+            miComando.Parameters.Add(new SqlParameter("@id", persona.Id));
 
             conexion = miConexion.getConnection();
 
