@@ -1,0 +1,124 @@
+Capa Entities:
+	clsPersona:
+		-Propiedades:
+			int id: consultable/modificable.
+			string nombre: consultable/modificable.
+			string apellidos: consultable/modificable.
+			date fechaNacimiento: consultable/modificable.
+			string foto: consultable/modificable.
+			string direccion: consultable/modificable.
+			string telefono: consultable/modificable.
+			int idDepartamento: consultable/modificable.
+		-Métodos:
+			getters y setters.
+			contructores (con y sin parámetros).
+			toString.
+	clsDepartamento:
+		-Propiedades:
+			int id: consultable/modificable.
+			string nombre: consultable/modificable.
+			
+		-Métodos:
+			getters y setters.
+			contructores (con y sin parámetros).
+
+Capa DAL:
+	·Conexion
+		clsMyConnection:
+			-Propiedades:
+				String server: consultable/modificable.
+				String dataBase: consultable/modificable.
+				String user: consultable/modificable.
+				String pass: consultable/modificable.
+			-Métodos:
+				getters y setters.
+				contructores (con y sin parámetros).
+				getConnection(): Método que abre una conexión con la base de datos.
+				closeConnection(ref SqlConnection connection): Este metodo cierra una conexión con la Base de datos.
+
+
+	·Gestoras
+		GestoraAccionesDepartamentosDAL:
+			-Métodos:
+				public static int deleteDepartamentoDAL(int id): Este método borra el departamento que coincida con el id introducido.
+				public static int addDepartamentoDAL(clsDepartamento departamento): Este método añade un nuevo departamento a la bbdd.
+				public static int alterDepartamentoDAL(clsDepartamento departamento): Este método modifica el departamento según su id.
+
+		GestoraAccionesPersonasDAL:
+			-Métodos:
+				public static int deletePersonaDAL(int id): Este método borra la persona que coincida con el id introducido.	
+				public static int addPersonaDAL(clsPersona persona): Este método añade un nuevo departamento a la bbdd.
+				public static int alterPersonaDAL(clsPersona persona): Este método modifica el departamento según su id.
+				
+
+	·Listados
+		clsListadoDepartamentosDAL:
+			-Propiedades:
+				clsMyConnection myConnection
+       				SqlConnection sqlConnection
+       				ObservableCollection<clsDepartamento> listaDepartamentos
+			-Métodos:
+				constructor sin parámetros
+				public ObservableCollection<clsDepartamento> getDepartamentosCompletos(): Este método extrae todos los departamentos de la bbdd.
+				public clsPersona getDepartamento(int id): Este método extrae un departamento de la bbdd según su id.
+
+		clsListadoPersonasDAL:
+			-Propiedades:
+				clsMyConnection myConnection
+       				SqlConnection sqlConnection
+       				ObservableCollection<clsPersona> listaPersonas
+			-Métodos:
+				constructor sin parámetros
+				public ObservableCollection<clsPersona> getUsuariosCompletos(): Este método extrae todas las personas de la bbdd.
+				public clsPersona getUsuario(int id): Este método extrae un usuario de la bbdd según su id.
+
+Capa BL:
+	·Gestoras
+		GestoraAccionesDepartamentosBL:
+			-Métodos:
+				public static int addDepartamentoBL(clsDepartamento departamento): Este método añade un departamento a la bbdd.
+				public static int alterDepartamentoBL(clsDepartamento departamento): Este método edita un departamento de la bbdd.
+				public static int deleteDepartamentoBL(int id): Este método borra una persona de la bbdd.
+
+		GestoraAccionesPersonasBL:
+			-Métodos:
+				public static int addPersonaBL(clsPersona persona): Este método añade una persona a la bbdd.
+				public static int alterPersonaBL(clsPersona persona): Este método edita una persona de la bbdd.
+				public static int deletePersonasBL(int id): Este método borra una persona de la bbdd.
+	·Listados
+		clsListadoDepartamentosBL:
+			-Propiedades:
+				ObservableCollection<clsDepartamento> departamentos: consultable/modificable.
+				clsDepartamento departamento: consultable/modificable. 
+			-Métodos:
+				getters y setters.
+				contructores (con y sin parámetros).
+			
+		clsListadoPersonasBL:
+			-Propiedades:
+				ObservableCollection<clsPersona> personas: consultable/modificable.
+				clsPersona persona: consultable/modificable. 
+			-Métodos:
+				getters y setters.
+				contructores (con y sin parámetros).
+
+
+Capa UI (ASP):
+	·Models
+		clsPersonanombreDepartamento:
+		·ViewModels
+			VM_ListadoPersonas:
+			VM_PersonaListaDepartamentos:
+			VM_PersonaNombreDepartamento:
+	·Controllers
+		HomeController 
+	·Views
+		Index: necesita un listado personas.
+		Create: necesita una persona vacía con una lista de departamentos.
+		Delete: necesita una persona con el nombre de su departamento.
+		Edit: necesita una persona seleccionada con una lista de departamentos.
+		Details: necesita una persona con el nombre de su departamento.
+
+
+//TODO
+Capa UI (UWP):

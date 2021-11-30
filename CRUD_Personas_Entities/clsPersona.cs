@@ -17,6 +17,7 @@ namespace CRUD_Personas_Entities
         private String telefono;
         private int idDepartamento;
         #endregion
+
         #region propiedades publicas
         //public String Nombre(get; set;) estos son propiedades autoimplementadas, si ponemos esto, borramos el private String nombre de arriba
         public int Id {
@@ -74,8 +75,6 @@ namespace CRUD_Personas_Entities
         }
         #endregion
 
-
-
         #region constructores
         // constructor con parametors
         public clsPersona(String nombre)
@@ -116,6 +115,7 @@ namespace CRUD_Personas_Entities
 
 
         #endregion
+
         #region metodos
         public override string ToString()
         {

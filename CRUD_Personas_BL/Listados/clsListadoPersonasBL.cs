@@ -13,13 +13,13 @@ namespace BL
 
         public clsListadoPersonasBL(int id)
         {
-            Personas = new ClaseListadoPersonasDAL().getUsuariosCompletos();
-            Persona = new ClaseListadoPersonasDAL().getUsuario(id);
+            Personas = new clsListadoPersonasDAL().getUsuariosCompletos();
+            Persona = new clsListadoPersonasDAL().getUsuario(id);
         }
 
         public clsListadoPersonasBL()
         {
-            Personas = new ClaseListadoPersonasDAL().getUsuariosCompletos();
+            Personas = new clsListadoPersonasDAL().getUsuariosCompletos();
         }
     }
 }

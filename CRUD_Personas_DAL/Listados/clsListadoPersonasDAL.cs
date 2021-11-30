@@ -9,18 +9,16 @@ using DAL;
 namespace DAL
 {
 
-    public class ClaseListadoPersonasDAL
+    public class clsListadoPersonasDAL
     {
         private clsMyConnection myConnection;
         private SqlConnection sqlConnection;
         private ObservableCollection<clsPersona> listaPersonas;
-        private clsPersona persona;
 
-        public ClaseListadoPersonasDAL()
+        public clsListadoPersonasDAL()
         {
             myConnection = new clsMyConnection();
             listaPersonas = new ObservableCollection<clsPersona>();
-            persona = new clsPersona();
         }
 
         public ObservableCollection<clsPersona> getUsuariosCompletos()

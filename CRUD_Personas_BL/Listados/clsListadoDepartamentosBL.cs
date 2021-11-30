@@ -14,13 +14,13 @@ namespace CRUD_Personas_BL.Listados
 
         public clsListadoDepartamentosBL(int id)
         {
-            Departamentos = new ClaseListadoDepartamentosDAL().getDepartamentosCompletos();
-            Departamento = new ClaseListadoDepartamentosDAL().getDepartamento(id);
+            Departamentos = new clsListadoDepartamentosDAL().getDepartamentosCompletos();
+            Departamento = new clsListadoDepartamentosDAL().getDepartamento(id);
         }
 
         public clsListadoDepartamentosBL()
         {
-            Departamentos = new ClaseListadoDepartamentosDAL().getDepartamentosCompletos();
+            Departamentos = new clsListadoDepartamentosDAL().getDepartamentosCompletos();
         }
     }
 }

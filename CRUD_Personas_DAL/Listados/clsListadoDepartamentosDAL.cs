@@ -8,13 +8,13 @@ using System.Text;
 
 namespace CRUD_Personas_DAL.Listados
 {
-    public class ClaseListadoDepartamentosDAL
+    public class clsListadoDepartamentosDAL
     {
         private clsMyConnection myConnection;
         private SqlConnection sqlConnection;
         private ObservableCollection<clsDepartamento> listaDepartamentos;
 
-        public ClaseListadoDepartamentosDAL()
+        public clsListadoDepartamentosDAL()
         {
             myConnection = new clsMyConnection();
             listaDepartamentos = new ObservableCollection<clsDepartamento>();
