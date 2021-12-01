@@ -31,16 +31,16 @@ namespace CRUD_Personas_ASP.Controllers
         // POST: PersonasController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(clsPersona persona)
         {
             try
             {
-
+                GestoraAccionesPersonasBL.addPersonaBL(persona);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Error");
             }
         }
 
@@ -55,15 +55,17 @@ namespace CRUD_Personas_ASP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(clsPersona persona)
         {
+            ActionResult result= View();
             try
             {
                 GestoraAccionesPersonasBL.alterPersonaBL(persona);
-                return RedirectToAction(nameof(Index));
+                result= RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                result= View("Error");
             }
+            return result;
         }
 
         // GET: PersonasController/Delete/5
@@ -79,11 +81,12 @@ namespace CRUD_Personas_ASP.Controllers
         {
             try
             {
+                GestoraAccionesPersonasBL.deletePersonaBL(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View("Error");
             }
         }
     }

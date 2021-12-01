@@ -18,7 +18,7 @@ namespace CRUD_Personas_BL.Gestoras
             return GestoraAccionesPersonasDAL.alterPersonaDAL(persona);
         }
 
-        public static int deletePersonasBL(int id)
+        public static int deletePersonaBL(int id)
         {
             return GestoraAccionesPersonasDAL.deletePersonaDAL(id);
         }

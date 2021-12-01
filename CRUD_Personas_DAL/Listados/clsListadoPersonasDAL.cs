@@ -38,15 +38,42 @@ namespace DAL
                     while (reader.Read())
                     {
                         oPersona = new clsPersona();
-                        oPersona.Id = (int)reader["IDPersona"];
-                        oPersona.Nombre = (string)reader["nombrePersona"];
-                        oPersona.Apellidos = (string)reader["apellidosPersona"];
-                        oPersona.Direccion = (string)reader["direccion"];
-                        oPersona.Telefono = (string)reader["telefono"];
+                        if (reader["IDPersona"] != System.DBNull.Value)
+                        {
+                            oPersona.Id = (int)reader["IDPersona"];
+                        }
+                        else { oPersona.Id = 0; }
+
+                        if (reader["nombrePersona"] != System.DBNull.Value)
+                        {
+                            oPersona.Nombre = (string)reader["nombrePersona"];
+                        }
+                        else { oPersona.Nombre = null; }
+
+                        if (reader["apellidosPersona"] != System.DBNull.Value)
+                        {
+                            oPersona.Apellidos = (string)reader["apellidosPersona"];
+                        }
+                        else { oPersona.Apellidos = null; }
+
+                        if (reader["direccion"] != System.DBNull.Value)
+                        {
+                            oPersona.Direccion = (string)reader["direccion"];
+                        }
+                        else { oPersona.Direccion = null; }
+
+                        if (reader["telefono"] != System.DBNull.Value)
+                        {
+                            oPersona.Telefono = (string)reader["telefono"];
+                        }
+                        else { oPersona.Telefono = null; }
+
                         if (reader["fechaNacimiento"] != System.DBNull.Value)
                         {
                             oPersona.FechaNacimiento = (DateTime)reader["fechaNacimiento"];
                         }
+                        else { oPersona.FechaNacimiento = DateTime.MinValue; }
+
                         listaPersonas.Add(oPersona);
                     }
                 }

@@ -29,7 +29,6 @@ namespace CRUD_Personas_DAL.Gestoras
 
             try
             {
-                conexion.Open();
                 miComando.CommandText = "DELETE FROM Personas WHERE IDPersona=@id";
                 miComando.Connection = conexion;
 
