@@ -13,13 +13,20 @@ namespace CRUD_Personas_ASP.Controllers
         // GET: PersonasController
         public ActionResult Index()
         {
-            return View(new VM_ListadoPersonas().GetListadoClsPersonas());
+            try
+            {
+                return View(new VM_ListadoPersonas().GetListadoClsPersonas());
+            }
+            catch
+            {
+                return View("Error");
+            }
         }
 
         // GET: PersonasController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int idPersona)
         {
-            return View(new VM_PersonaNombreDepartamento(id));
+            return View(new VM_PersonaNombreDepartamento(idPersona));
         }
 
         // GET: PersonasController/Create
@@ -45,9 +52,9 @@ namespace CRUD_Personas_ASP.Controllers
         }
 
         // GET: PersonasController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int idPersona)
         {
-            return View(new VM_PersonaListaDepartamentos(id));
+            return View(new VM_PersonaListaDepartamentos(idPersona));
         }
 
         // POST: PersonasController/Edit/5
@@ -69,19 +76,20 @@ namespace CRUD_Personas_ASP.Controllers
         }
 
         // GET: PersonasController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int idPersona)
         {
-            return View(new VM_PersonaNombreDepartamento(id));
+            return View(new VM_PersonaNombreDepartamento(idPersona));
         }
 
         // POST: PersonasController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        [ActionName("Delete")]
+        public ActionResult BtnDelete(int idPersona)
         {
             try
             {
-                GestoraAccionesPersonasBL.deletePersonaBL(id);
+                GestoraAccionesPersonasBL.deletePersonaBL(idPersona);
                 return RedirectToAction(nameof(Index));
             }
             catch

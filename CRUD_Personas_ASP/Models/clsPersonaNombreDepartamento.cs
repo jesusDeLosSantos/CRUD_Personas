@@ -26,7 +26,7 @@ namespace CRUD_Personas_ASP.Models
         public clsPersonaNombreDepartamento(int id) 
         {
             persona = new clsListadoPersonasBL(id).Persona;
-            nombreDepartamento = new clsListadoDepartamentosBL(id).Departamento.Nombre;
+            nombreDepartamento = new clsListadoDepartamentosBL(persona.IdDepartamento).Departamento.Nombre;
         }
         #endregion
     }

@@ -43,7 +43,14 @@
                 <select name="Persona.IdDepartamento">
                 @foreach (CRUD_Personas_Entities.clsDepartamento dpto in @Model.Departamentos)
                 {
-                     <option value="@dpto.Id">@dpto.Nombre</option>                    
+                    if (dpto.Id == @Model.Persona.IdDepartamento)
+                    {
+                        <option value="@dpto.Id" selected>@dpto.Nombre</option>
+                    }
+                    else
+                    {
+                        <option value="@dpto.Id">@dpto.Nombre</option>
+                    }  
                 }
                 </select>
             </div>

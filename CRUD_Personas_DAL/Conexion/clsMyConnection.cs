@@ -35,7 +35,7 @@ namespace DAL
         public clsMyConnection()
         {
 
-            this.server = "jesus.database.windows.net";
+            this.server = "jesu.database.windows.net";
             this.dataBase = "BaseDeDatosJesus";
             this.user = "jesus_admin";
             this.pass = "#Mitesoro";

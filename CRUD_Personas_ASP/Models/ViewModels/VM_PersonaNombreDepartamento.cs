@@ -20,9 +20,9 @@
         #endregion
 
         #region constructores
-        public VM_PersonaNombreDepartamento(int id)
+        public VM_PersonaNombreDepartamento(int idPersona)
         {
-            persona = new clsPersonaNombreDepartamento(id);
+            persona = new clsPersonaNombreDepartamento(idPersona);
         }
         #endregion
     }
