@@ -14,19 +14,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
              <input type="hidden" value="@Model.Persona.Id" name="Persona.Id"/>
             <div class="form-group">
-                <label asp-for="Persona.FechaNacimiento" class="control-label"></label>
-                <input asp-for="Persona.FechaNacimiento" class="form-control" />
-                <span asp-validation-for="Persona.FechaNacimiento" class="text-danger"></span>
+                <label asp-for="Persona.Nombre" class="control-label"></label>
+                <input asp-for="Persona.Nombre" class="form-control" />
+                <span asp-validation-for="Persona.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Persona.Apellidos" class="control-label"></label>
                 <input asp-for="Persona.Apellidos" class="form-control" />
                 <span asp-validation-for="Persona.Apellidos" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Persona.Nombre" class="control-label"></label>
-                <input asp-for="Persona.Nombre" class="form-control" />
-                <span asp-validation-for="Persona.Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Persona.Direccion" class="control-label"></label>
@@ -37,6 +32,11 @@
                 <label asp-for="Persona.Telefono" class="control-label"></label>
                 <input asp-for="Persona.Telefono" class="form-control" />
                 <span asp-validation-for="Persona.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Persona.FechaNacimiento" class="control-label"></label>
+                <input asp-for="Persona.FechaNacimiento" class="form-control" />
+                <span asp-validation-for="Persona.FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label>Nombre Departamento: </label>

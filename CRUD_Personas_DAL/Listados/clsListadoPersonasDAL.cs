@@ -83,8 +83,8 @@ namespace DAL
                         if (reader["Foto"] != System.DBNull.Value)
                         {
                             oPersona.Foto = (String)reader["Foto"];
-                        }
-                        else { oPersona.Foto = null; }
+                        }                                               //En vez de una foto de un icono, esta es la imagen por defecto
+                        else { oPersona.Foto = "https://zeleb.publico.es/sites/default/files/styles/news_main_image/public/captura_de_pantalla_2016-08-17_a_las_14.15.02.png"; }
 
                         listaPersonas.Add(oPersona);
                     }
@@ -162,7 +162,7 @@ namespace DAL
                         {
                             oPersona.Foto = (String)reader["Foto"];
                         }
-                        else { oPersona.Foto = null; }
+                        else { oPersona.Foto = "https://zeleb.publico.es/sites/default/files/styles/news_main_image/public/captura_de_pantalla_2016-08-17_a_las_14.15.02.png"; }
 
                     }
                 }

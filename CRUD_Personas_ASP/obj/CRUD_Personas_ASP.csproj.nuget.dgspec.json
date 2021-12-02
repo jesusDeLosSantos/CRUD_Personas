@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj": {}
+    "E:\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj": {
+    "E:\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
+        "projectUniqueName": "E:\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
         "projectName": "CRUD_Personas_ASP",
-        "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
-        "packagesPath": "C:\\Users\\jsantos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\obj\\",
+        "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "E:\\CRUD_Personas\\CRUD_Personas_ASP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jsantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -34,11 +34,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
-                "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
+              "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
+                "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj"
               },
-              "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-                "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
+              "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+                "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
               }
             }
           }
@@ -80,21 +80,21 @@
         }
       }
     },
-    "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
+    "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
+        "projectUniqueName": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
         "projectName": "CRUD_Personas_BL",
-        "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
-        "packagesPath": "C:\\Users\\jsantos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_BL\\obj\\",
+        "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "E:\\CRUD_Personas\\CRUD_Personas_BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jsantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -110,11 +110,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
-                "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
+              "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
+                "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
               },
-              "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-                "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
+              "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+                "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
               }
             }
           }
@@ -150,21 +150,21 @@
         }
       }
     },
-    "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
+    "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj",
+        "projectUniqueName": "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj",
         "projectName": "CRUD_Personas_DAL",
-        "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj",
-        "packagesPath": "C:\\Users\\jsantos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_DAL\\obj\\",
+        "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "E:\\CRUD_Personas\\CRUD_Personas_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jsantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -180,8 +180,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
-                "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
+              "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+                "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj"
               }
             }
           }
@@ -221,21 +221,21 @@
         }
       }
     },
-    "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
+    "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
+        "projectUniqueName": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
         "projectName": "CRUD_Personas_Entities",
-        "projectPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
-        "packagesPath": "C:\\Users\\jsantos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\obj\\",
+        "projectPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\jsantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
