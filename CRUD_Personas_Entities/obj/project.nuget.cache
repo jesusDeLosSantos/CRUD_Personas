@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xMor/FdX0NyV58mB/G0c/mdCmu0PaPdP/k+uRkJTesZNIrnLacEZLM76i2hJS4UHpYWYxykIeaUpMy+3/oKo8A==",
+  "dgSpecHash": "N1FhZZOkxpCBzAGSVnetrLhIx2cxEeFAfMMzkAdDhQ/lWGf72cbdNowjwD7WrZIO479wxmFZzapGrr7bX/LFBw==",
   "success": true,
-  "projectFilePath": "E:\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
+  "projectFilePath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_Entities\\CRUD_Personas_Entities.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\jsantos\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\jsantos\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\jsantos\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

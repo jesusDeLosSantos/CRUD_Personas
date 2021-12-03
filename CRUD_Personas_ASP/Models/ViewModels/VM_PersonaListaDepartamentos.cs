@@ -5,11 +5,14 @@ using System.Collections.ObjectModel;
 
 namespace CRUD_Personas_ASP.Models.ViewModels
 {
-    // Esta clase es un ViewModel que suministra una persona con la lista de todos los departamentos extraídos de la capa BL.
-    //
-    // PROPIEDADES
-    //   _persona: clsPersona. Consultable/modificable.
-    //   _departamentos: ObservableCollection<clsDepartamento>. Consultable/Modificable.
+    /// <summary>
+    /// Esta clase es un ViewModel que suministra una persona con la lista de todos los departamentos extraídos de la capa BL.
+    ///
+    /// PROPIEDADES
+    ///   _persona: clsPersona. Consultable/modificable.
+    ///   _departamentos: ObservableCollection<clsDepartamento>. Consultable/Modificable.
+    /// </summary>
+
     public class VM_PersonaListaDepartamentos
     {
         #region atributos

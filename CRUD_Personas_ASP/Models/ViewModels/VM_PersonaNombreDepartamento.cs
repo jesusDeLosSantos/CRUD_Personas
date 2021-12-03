@@ -1,9 +1,11 @@
 ﻿namespace CRUD_Personas_ASP.Models.ViewModels
 {
-    // Esta clase es un ViewModel que suministra una persona del Model clsPersonaNombreDepartamento.
-    //
-    // PROPIEDADES
-    //   _persona: clsPersonaNombreDepartamento. Consultable/modificable.
+    /// <summary>
+    /// Esta clase es un ViewModel que suministra una persona del Model clsPersonaNombreDepartamento.
+    ///
+    /// PROPIEDADES
+    ///   _persona: clsPersonaNombreDepartamento. Consultable/modificable.
+    /// </summary>
 
     public class VM_PersonaNombreDepartamento
     {

@@ -106,10 +106,33 @@ Capa BL:
 Capa UI (ASP):
 	·Models
 		clsPersonanombreDepartamento:
+			-Propiedades:
+				string nombreDepartamento: consultable/modificable.
+				clsPersona persona: consultable/modificable.
+			-Métodos:
+				getters y setters.
+				contructores (con y sin parámetros).
+        private clsPersona persona;
 		·ViewModels
 			VM_ListadoPersonas:
+				-Propiedades:
+					clsListadoPersonasBL listaBL.
+				-Métodos:
+					constructores.
+					public ObservableCollection<clsPersona> GetListadoClsPersonas(): Este metodo rellena la la propiedad
 			VM_PersonaListaDepartamentos:
+				-Propiedades:
+					clsPersona persona: consultable/modificable.
+        				ObservableCollection<clsDepartamento> departamentos: consultable/modificable.
+				-Métodos:
+					getters y setters
+					constructores
 			VM_PersonaNombreDepartamento:
+				-Propiedades:
+					clsPersonaNombreDepartamento persona: consultable, modificable.
+				-Métodos:
+					getters y setters
+					constructores
 	·Controllers
 		HomeController 
 	·Views
@@ -118,7 +141,3 @@ Capa UI (ASP):
 		Delete: necesita una persona con el nombre de su departamento.
 		Edit: necesita una persona seleccionada con una lista de departamentos.
 		Details: necesita una persona con el nombre de su departamento.
-
-
-//TODO
-Capa UI (UWP):

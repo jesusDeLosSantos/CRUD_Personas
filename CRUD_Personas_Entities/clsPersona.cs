@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace CRUD_Personas_Entities
 {
@@ -24,29 +26,28 @@ namespace CRUD_Personas_Entities
             get { return id; }
             set { id = value; }
         }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayName("Fecha de Nacimiento")]
         public DateTime FechaNacimiento
         {
             get { return fechaNacimiento; }
             set { fechaNacimiento = value; }
         }
+
+        [Required(ErrorMessage = "Campo obligatorio")]
         public String Apellidos
         {
             get { return apellidos; }
             set { apellidos = value; }
         }
+
+        [Required(ErrorMessage = "Campo obligatorio")]
         public String Nombre
         {
             get => nombre;
-            /*
-             return nombre;
-             */
+           
             set => nombre = value;
-            /* Otra manera:
-            set
-            {
-                nombre = value;
-            }
-             */
         }
 
         public String Direccion
@@ -61,6 +62,7 @@ namespace CRUD_Personas_Entities
             set { telefono = value; }
         }
 
+        [DisplayName("Id del Departamento")]
         public int IdDepartamento
         {
             get { return idDepartamento; }

@@ -113,7 +113,7 @@ namespace CRUD_Personas_DAL.Gestoras
 
                 if (persona.IdDepartamento == 0)
                 {
-                    miComando.Parameters.Add(new SqlParameter("@IDDepartemento", System.DBNull.Value));
+                    miComando.Parameters.Add(new SqlParameter("@IDDepartamento", System.DBNull.Value));
                 }
                 else
                 {

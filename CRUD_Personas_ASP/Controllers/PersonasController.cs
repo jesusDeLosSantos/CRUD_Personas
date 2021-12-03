@@ -3,6 +3,7 @@ using CRUD_Personas_ASP.Models.ViewModels;
 using CRUD_Personas_BL.Gestoras;
 using CRUD_Personas_Entities;
 using Ejercicio2.Models;
+using Ejercicio2.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,26 +14,46 @@ namespace CRUD_Personas_ASP.Controllers
         // GET: PersonasController
         public ActionResult Index()
         {
+            ActionResult result = View();
             try
             {
-                return View(new VM_ListadoPersonas().GetListadoClsPersonas());
+                result = View(new VM_ListadoPersonas().GetListadoClsPersonas());
             }
             catch
             {
-                return View("Error");
+                result = View("Error");
             }
+            return result;
         }
 
         // GET: PersonasController/Details/5
         public ActionResult Details(int idPersona)
         {
-            return View(new VM_PersonaNombreDepartamento(idPersona));
+            ActionResult result = View();
+            try
+            {
+                result = View(new VM_PersonaNombreDepartamento(idPersona));
+            }
+            catch
+            {
+                result = View("Error");
+            }
+            return result;
         }
 
         // GET: PersonasController/Create
         public ActionResult Create()
         {
-            return View(new VM_PersonaListaDepartamentos());
+            ActionResult result = View();
+            try
+            {
+                result = View(new VM_PersonaListaDepartamentos());
+            }
+            catch
+            {
+                result = View("Error");
+            }
+            return result;
         }
 
         // POST: PersonasController/Create
@@ -40,21 +61,33 @@ namespace CRUD_Personas_ASP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(clsPersona persona)
         {
+            ActionResult result = View();
             try
             {
                 GestoraAccionesPersonasBL.addPersonaBL(persona);
-                return RedirectToAction(nameof(Index));
+                result = RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View("Error");
+                result = View("Error");
             }
+            return result;
         }
 
         // GET: PersonasController/Edit/5
         public ActionResult Edit(int idPersona)
         {
-            return View(new VM_PersonaListaDepartamentos(idPersona));
+            ActionResult result = View();
+            try
+            {
+                result= View(new VM_PersonaListaDepartamentos(idPersona));
+            }
+            catch
+            {
+                result= View("Error");
+            }
+
+            return result;            
         }
 
         // POST: PersonasController/Edit/5
@@ -78,7 +111,16 @@ namespace CRUD_Personas_ASP.Controllers
         // GET: PersonasController/Delete/5
         public ActionResult Delete(int idPersona)
         {
-            return View(new VM_PersonaNombreDepartamento(idPersona));
+            ActionResult result = View();
+            try
+            {
+                result = View(new VM_PersonaNombreDepartamento(idPersona));
+            }
+            catch
+            {
+                result = View("Error");
+            }
+            return result;
         }
 
         // POST: PersonasController/Delete/5
@@ -87,15 +129,17 @@ namespace CRUD_Personas_ASP.Controllers
         [ActionName("Delete")]
         public ActionResult BtnDelete(int idPersona)
         {
+            ActionResult result = View();
             try
             {
                 GestoraAccionesPersonasBL.deletePersonaBL(idPersona);
-                return RedirectToAction(nameof(Index));
+                result = RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View("Error");
+                result = View("Error");
             }
+            return result;
         }
     }
 }

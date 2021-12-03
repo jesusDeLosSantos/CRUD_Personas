@@ -7,12 +7,15 @@ using BL;
 using CRUD_Personas_Entities;
 
 
-namespace Ejercicio2.Models
+namespace Ejercicio2.Models.ViewModels
 {
-    // Esta clase es un ViewModel que suministra un listado de personas de la capa BL.
-    //
-    // PROPIEDADES
-    //   _listaBL: clsListadoPersonasBL. Consultable.
+    /// <summary>
+    /// Esta clase es un ViewModel que suministra un listado de personas de la capa BL.
+    ///
+    /// PROPIEDADES
+    ///   _listaBL: clsListadoPersonasBL. Consultable.
+    /// </summary>
+
 
     public class VM_ListadoPersonas
     {
@@ -20,14 +23,14 @@ namespace Ejercicio2.Models
         private clsListadoPersonasBL listaBL;
         #endregion
 
-        #region getters y setters
+        #region constructores
         public VM_ListadoPersonas()
         {
             listaBL = new clsListadoPersonasBL();
         }
         #endregion
 
-        #region constructores
+        #region metodos
         public ObservableCollection<clsPersona> GetListadoClsPersonas() {
             return listaBL.Personas;
         }

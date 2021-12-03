@@ -21,6 +21,10 @@ namespace DAL
             listaPersonas = new ObservableCollection<clsPersona>();
         }
 
+        /// <summary>
+        /// Este metodo extrae todos los usuarios de la bbdd
+        /// </summary>
+        /// <returns>Devuelve una lista con todos los usuarios</returns>
         public ObservableCollection<clsPersona> getUsuariosCompletos()
         {
             clsPersona oPersona;
@@ -92,12 +96,18 @@ namespace DAL
                 reader.Close();
                 sqlConnection.Close();
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                throw e;
+            }
 
             return listaPersonas;
         }
 
-
+        /// <summary>
+        /// Este metodo extrae la persona que coincida con el id introducido
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Devuelve la persona que coincide con el id</returns>
         public clsPersona getUsuario(int id)
         {
             clsPersona oPersona;
@@ -169,7 +179,9 @@ namespace DAL
                 reader.Close();
                 sqlConnection.Close();
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                throw e;
+            }
 
             return oPersona;
         }

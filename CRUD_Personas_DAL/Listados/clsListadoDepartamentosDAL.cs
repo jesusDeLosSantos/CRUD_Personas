@@ -45,7 +45,9 @@ namespace CRUD_Personas_DAL.Listados
                 reader.Close();
                 sqlConnection.Close();
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                throw e;
+            }
 
             return listaDepartamentos;
         }
@@ -76,7 +78,9 @@ namespace CRUD_Personas_DAL.Listados
                 reader.Close();
                 sqlConnection.Close();
             }
-            catch (Exception e) { }
+            catch (Exception e) {
+                throw e;
+            }
 
             return oDepartamento;
         }
