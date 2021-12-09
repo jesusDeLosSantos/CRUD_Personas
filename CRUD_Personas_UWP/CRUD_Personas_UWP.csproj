@@ -119,15 +119,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Page2VM.cs" />
+    <Compile Include="ViewModels\PersonaListaDepartamentosVM.cs" />
+    <Compile Include="Models\PersonaNombreDepartamento.cs" />
+    <Compile Include="ViewModels\PersonasViewVM.cs" />
     <Compile Include="ViewModels\utillities\clsVMBase.cs" />
     <Compile Include="ViewModels\utillities\DelegateCommand.cs" />
+    <Compile Include="Views\DepartamentosView.xaml.cs">
+      <DependentUpon>DepartamentosView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Page2.xaml.cs">
-      <DependentUpon>Page2.xaml</DependentUpon>
+    <Compile Include="Views\PersonasView.xaml.cs">
+      <DependentUpon>PersonasView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -150,11 +155,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\DepartamentosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Page2.xaml">
+    <Page Include="Views\PersonasView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,9 +173,7 @@
       <Version>6.2.12</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CRUD_Personas_BL\CRUD_Personas_BL.csproj">
       <Project>{2114b8df-6690-4996-ae11-d0ba99c12e16}</Project>

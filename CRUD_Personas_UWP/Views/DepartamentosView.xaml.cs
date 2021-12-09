@@ -1,6 +1,4 @@
-﻿using CRUD_Personas_DAL.Gestoras;
-using CRUD_Personas_Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,21 +20,11 @@ namespace CRUD_Personas_UWP.Views
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class Page2 : Page
+    public sealed partial class DepartamentosView : Page
     {
-        public Page2()
+        public DepartamentosView()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            GestoraAccionesPersonasDAL.alterPersonaDAL(new clsPersona(4, "Bug", "Fernandez"));
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            GestoraAccionesPersonasDAL.addPersonaDAL(new clsPersona("Buck", "Fernandez"));
         }
     }
 }

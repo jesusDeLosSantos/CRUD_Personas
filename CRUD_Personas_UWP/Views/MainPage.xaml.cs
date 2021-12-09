@@ -27,14 +27,27 @@ namespace CRUD_Personas_UWP
     {
         public MainPage()
         {
-
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Event associated to the click that makes you navigate to the frame PersonasView.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PersonasTapped(object sender, TappedRoutedEventArgs e)
         {
-            //GestoraAccionesDepartamentosDAL.deleteDepartamentoDAL(3);
-            this.Frame.Navigate(typeof(Page2));
+            contentFrame.Navigate(typeof(PersonasView));
+        }
+
+        /// <summary>
+        /// Event associated to the click that makes you navigate to the frame NVGallery.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DepartamentosTapped(object sender, TappedRoutedEventArgs e)
+        {
+            contentFrame.Navigate(typeof(DepartamentosView));
         }
     }
 }

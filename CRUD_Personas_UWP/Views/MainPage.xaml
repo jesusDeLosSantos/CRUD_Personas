@@ -4,13 +4,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CRUD_Personas_UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    
     <RelativePanel>
-        <Button Click="Button_Click" x:Name="x"/>
-        <!--<Button Click="Button_Click_1" RelativePanel.Below="x" x:Name="y"/>
-        <Button Click="Button_Click_2" RelativePanel.Below="y"/>-->
+        <muxc:NavigationView x:Name="nvSample" PaneDisplayMode="Left" SelectionFollowsFocus="Enabled" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" IsSettingsVisible="False" IsBackButtonVisible="Collapsed">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Icon="Account" Content="Personas" x:Name="Personas" Tapped="PersonasTapped"/>
+                <muxc:NavigationViewItem Icon="Library"  Content="Departamentos" x:Name="Departamentos" Tapped="DepartamentosTapped"/>
+            </muxc:NavigationView.MenuItems>
+            <Frame x:Name="contentFrame"/>
+        </muxc:NavigationView>
     </RelativePanel>
 </Page>
