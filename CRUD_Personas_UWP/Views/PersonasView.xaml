@@ -2,7 +2,6 @@
     x:Class="CRUD_Personas_UWP.Views.PersonasView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CRUD_Personas_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -11,12 +10,18 @@
 
 
     <Page.DataContext>
-        <vm:PersonasViewVM/>
+        <vm:PersonaNombreDepartamentoVM/>
     </Page.DataContext>
-    
+
     <RelativePanel>
-        <AppBarButton x:Name="delete" Icon="Delete" Command="{Binding CommandEliminar}"/>
-        <Grid Name="listaDePersonas" RelativePanel.AlignBottomWithPanel="True" RelativePanel.Below="delete">
+        <TextBox RelativePanel.RightOf="search" Width="400" Text="{Binding TextoBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <AppBarButton RelativePanel.RightOf="botones" x:Name="search" Icon="Find" Height="35" Margin="20,0" Command="{Binding CommandFiltrar}"/>
+        <StackPanel x:Name="botones" Orientation="Horizontal">
+            <AppBarButton Icon="Delete" Command="{Binding CommandEliminar}"/>
+            <AppBarButton Icon="Add" Click="ClickCreate"/>
+            <AppBarButton Icon="Edit" Click="ClickEdit"/>
+        </StackPanel>
+        <Grid Name="listaDePersonas" RelativePanel.AlignBottomWithPanel="True" RelativePanel.Below="botones">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -24,19 +29,21 @@
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaClientesFiltrada}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding Cliente, Mode=TwoWay}">
+            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaClientesFiltrada}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding Cliente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Nombre}" Margin="6,0"/>
-                            <TextBlock Text="{Binding Apellidos}"/>
+                            <TextBlock Text="{Binding Persona.Nombre}" Margin="6,0"/>
+                            <TextBlock Text="{Binding Persona.Apellidos}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-        <Grid x:Name="grid" RelativePanel.RightOf="listaDePersonas" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
+        <Grid x:Name="grid" RelativePanel.RightOf="listaDePersonas" RelativePanel.Below="botones" RelativePanel.AlignRightWithPanel="True" Margin="40" RelativePanel.AlignLeftWith="search" BorderBrush="LightCoral" BorderThickness="3" CornerRadius="15">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -49,15 +56,19 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="Nombre:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBlock Text="{Binding Cliente.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock Text="{Binding Cliente.Persona.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="15"/>
             <TextBlock Text="Apellidos:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBlock Text="{Binding Cliente.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="Auto"/>
+            <TextBlock Text="{Binding Cliente.Persona.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="Auto" Margin="15"/>
             <TextBlock Text="Fecha de nacimiento:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBlock Text="{Binding Cliente.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="Auto"/>
+            <TextBlock Text="{Binding Cliente.Persona.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="Auto" Margin="15"/>
             <TextBlock Text="Teléfono:" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBlock Text="{Binding Cliente.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="Auto"/>
+            <TextBlock Text="{Binding Cliente.Persona.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="Auto" Margin="15"/>
             <TextBlock Text="Dirección:" Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBlock Text="{Binding Cliente.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <TextBlock Text="{Binding Cliente.Persona.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="4" Grid.Column="1" Margin="15"/>
+            <TextBlock Text="Departamento:" Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
+            <TextBlock Text="{Binding Cliente.NombreDepartamento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="5" Grid.Column="1" Margin="15"/>
+            <TextBlock Text="Foto:" Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
+            <Image Source="{Binding Cliente.Persona.Foto, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="6" Grid.Column="1" Margin="15" Height="100" Width="100"/>
         </Grid>
     </RelativePanel>
 </Page>

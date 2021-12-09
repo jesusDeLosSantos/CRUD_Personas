@@ -121,11 +121,17 @@
     </Compile>
     <Compile Include="ViewModels\PersonaListaDepartamentosVM.cs" />
     <Compile Include="Models\PersonaNombreDepartamento.cs" />
-    <Compile Include="ViewModels\PersonasViewVM.cs" />
+    <Compile Include="ViewModels\PersonaNombreDepartamentoVM.cs" />
     <Compile Include="ViewModels\utillities\clsVMBase.cs" />
     <Compile Include="ViewModels\utillities\DelegateCommand.cs" />
+    <Compile Include="Views\Crear.xaml.cs">
+      <DependentUpon>Crear.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DepartamentosView.xaml.cs">
       <DependentUpon>DepartamentosView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editar.xaml.cs">
+      <DependentUpon>Editar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -155,7 +161,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Crear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DepartamentosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

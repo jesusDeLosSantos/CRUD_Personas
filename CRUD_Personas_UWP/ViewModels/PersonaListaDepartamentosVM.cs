@@ -13,37 +13,56 @@ using Windows.UI.Xaml.Controls;
 
 namespace CRUD_Personas_UWP.ViewModels
 {
-    public class PersonaListaDepartamentosVM
+    public class PersonaListaDepartamentosVM : clsVMBase
     {
 
         #region atributos
         private ObservableCollection<clsDepartamento> listaDepartamentos;
-        private clsPersona persona;
-        private DelegateCommand guardarFoto;
+        private clsPersona cliente;
+        private DelegateCommand commandGuardar;
         #endregion
         #region construccion
 
         public PersonaListaDepartamentosVM()
         {
-            guardarFoto = new DelegateCommand(Guardar, SePuedeGuardar);
             ListaDepartamentos = new ObservableCollection<clsDepartamento>(new clsListadoDepartamentosBL().Departamentos);
-            Persona = new clsPersona();
+            Cliente = new clsPersona();
         }
 
         #endregion
         #region propiedades publicas
         public ObservableCollection<clsDepartamento> ListaDepartamentos { get => listaDepartamentos; set => listaDepartamentos = value; }
-        public clsPersona Persona { get => persona; set => persona = value; }
+        public clsPersona Cliente {
+            get
+            {
+                return cliente;
+            }
+            set
+            {
+                cliente = value;
+                NotifyPropertyChanged("Persona");
+                if (commandGuardar != null)
+                    commandGuardar.RaiseCanExecuteChanged();
+            }
+        }
+        public DelegateCommand CommandGuardar {
+            get
+            {
+                commandGuardar = new DelegateCommand(GuardarCommand_Execute, GuardarCommand_CanExecute);
+                NotifyPropertyChanged("CommandGuardar");
+                return commandGuardar;
+            }
+        }
         #endregion
         #region Commands
-        private async void Guardar()
+        private async void GuardarCommand_Execute()
         {
             try
             {
-                if (Persona.Id == 0)
-                    GestoraAccionesPersonasBL.addPersonaBL(Persona);
+                if (Cliente.Id == 0)
+                    GestoraAccionesPersonasBL.addPersonaBL(Cliente);
                 else
-                    GestoraAccionesPersonasBL.alterPersonaBL(Persona);
+                    GestoraAccionesPersonasBL.alterPersonaBL(Cliente);
 
                 ContentDialog mensajeConfirmacion = new ContentDialog()
                 {
@@ -67,9 +86,9 @@ namespace CRUD_Personas_UWP.ViewModels
             }
 
         }
-        private bool SePuedeGuardar()
+        private bool GuardarCommand_CanExecute()
         {
-            return (!String.IsNullOrEmpty(Persona.Nombre) && !String.IsNullOrEmpty(Persona.Apellidos));
+            return true; //(!String.IsNullOrEmpty(Persona.Nombre) && !String.IsNullOrEmpty(Persona.Apellidos));
         }
         #endregion
     }

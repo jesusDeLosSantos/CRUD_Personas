@@ -13,11 +13,11 @@ using Windows.UI.Xaml.Controls;
 
 namespace CRUD_Personas_UWP.ViewModels
 {
-    public class PersonasViewVM : clsVMBase
+    public class PersonaNombreDepartamentoVM : clsVMBase
     {
 
-        private ObservableCollection<clsPersona> listaClientes;
-        public ObservableCollection<clsPersona> ListaClientesFiltrada { get; set; }
+        private ObservableCollection<PersonaNombreDepartamento> listaClientes;
+        public ObservableCollection<PersonaNombreDepartamento> ListaClientesFiltrada { get; set; }
         private PersonaNombreDepartamento cliente;
         private string textoBox;
         private DelegateCommand commandFiltrar;
@@ -35,6 +35,7 @@ namespace CRUD_Personas_UWP.ViewModels
             set
             {
                 cliente = value;
+                NotifyPropertyChanged("Cliente");
                 commandEliminar.RaiseCanExecuteChanged();
             }
         }
@@ -50,7 +51,7 @@ namespace CRUD_Personas_UWP.ViewModels
                 if (String.IsNullOrEmpty(TextoBox))
                 {
                     ListaClientesFiltrada = listaClientes;
-                    NotifyPropertyChanged("listaClientesFiltrada");
+                    NotifyPropertyChanged("ListaClientesFiltrada");
                 }
             }
         }
@@ -84,10 +85,10 @@ namespace CRUD_Personas_UWP.ViewModels
 
         private void FiltrarCommand_Execute()
         {
-            ListaClientesFiltrada = new ObservableCollection<clsPersona>(from p in listaClientes
-                                                                where p.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Apellidos.ToLower().Contains(TextoBox.ToLower())
+            ListaClientesFiltrada = new ObservableCollection<PersonaNombreDepartamento>(from p in listaClientes
+                                                                where p.Persona.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Persona.Apellidos.ToLower().Contains(TextoBox.ToLower())
                                                                 select p);
-            NotifyPropertyChanged("listaClientesFiltrada");
+            NotifyPropertyChanged("ListaClientesFiltrada");
         }
 
 
@@ -129,9 +130,13 @@ namespace CRUD_Personas_UWP.ViewModels
             return valid;
         }
 
-        public PersonasViewVM()
+        public PersonaNombreDepartamentoVM()
         {
-            listaClientes = new clsListadoPersonasBL().Personas;
+            listaClientes = new ObservableCollection<PersonaNombreDepartamento>();
+            foreach (clsPersona p in new clsListadoPersonasBL().Personas)
+            {
+                listaClientes.Add(new PersonaNombreDepartamento(p));
+            }
             ListaClientesFiltrada = listaClientes;
 
         }

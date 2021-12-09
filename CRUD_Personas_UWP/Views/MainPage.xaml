@@ -8,9 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Coral"/>
+        <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="Coral"/>
+    </Page.Resources>
+    
     
     <RelativePanel>
-        <muxc:NavigationView x:Name="nvSample" PaneDisplayMode="Left" SelectionFollowsFocus="Enabled" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" IsSettingsVisible="False" IsBackButtonVisible="Collapsed">
+        <muxc:NavigationView x:Name="nvSample" PaneDisplayMode="Left" SelectionFollowsFocus="Enabled" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" IsSettingsVisible="False" IsBackEnabled="True" BackRequested="nvSample_BackRequested">
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem Icon="Account" Content="Personas" x:Name="Personas" Tapped="PersonasTapped"/>
                 <muxc:NavigationViewItem Icon="Library"  Content="Departamentos" x:Name="Departamentos" Tapped="DepartamentosTapped"/>
