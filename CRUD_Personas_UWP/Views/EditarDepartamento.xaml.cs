@@ -29,6 +29,10 @@ namespace CRUD_Personas_UWP.Views
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento que recibe cualquier parametro y es casteado a departamento, para que si este no es nulo, enviarlo al vm de la vista.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             clsDepartamento departamento = (clsDepartamento)e.Parameter;

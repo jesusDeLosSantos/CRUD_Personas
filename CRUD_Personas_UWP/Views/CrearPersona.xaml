@@ -30,17 +30,17 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="Nombre:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding CLiente.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="15" Width="350"/>
+            <TextBox Text="{Binding Persona.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="15" Width="350"/>
             <TextBlock Text="Apellidos:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding Cliente.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="350" Margin="15"/>
+            <TextBox Text="{Binding Persona.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="350" Margin="15"/>
             <TextBlock Text="Fecha de nacimiento:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding Cliente.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="350" Margin="15"/>
+            <TextBox Text="{Binding Persona.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="350" Margin="15"/>
             <TextBlock Text="Teléfono:" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding Cliente.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="350" Margin="15"/>
+            <TextBox Text="{Binding Persona.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="350" Margin="15"/>
             <TextBlock Text="Dirección:" Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding Cliente.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="4" Grid.Column="1" Width="350" Margin="15"/>
+            <TextBox Text="{Binding Persona.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="4" Grid.Column="1" Width="350" Margin="15"/>
             <TextBlock Text="Departamento:" Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <ComboBox ItemsSource="{Binding ListaDepartamentos}" SelectedValuePath="Id" SelectedValue="{Binding Cliente.IdDepartamento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Width="350" Margin="15">
+            <ComboBox ItemsSource="{Binding ListaDepartamentos}" SelectedValuePath="Id" SelectedValue="{Binding Persona.IdDepartamento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="1" Width="350" Margin="15">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock x:Name="nombreDepartamento" Text="{Binding Nombre}"/>
@@ -48,7 +48,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <TextBlock Text="Foto:" Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
-            <TextBox Text="{Binding Cliente.Foto, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="6" Grid.Column="1" Width="350" Margin="15"/>
+            <TextBox Text="{Binding Persona.Foto, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="6" Grid.Column="1" Width="350" Margin="15"/>
         </Grid>
 
         <AppBarButton x:Name="save" Icon="Save" Command="{Binding CommandGuardar}" HorizontalAlignment="Center"/>

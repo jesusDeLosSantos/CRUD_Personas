@@ -27,6 +27,11 @@ namespace CRUD_Personas_UWP.Views
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento asociado al click que navega al frame MainPage.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Image_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));

@@ -112,7 +112,6 @@ Capa UI (ASP):
 			-Métodos:
 				getters y setters.
 				contructores (con y sin parámetros).
-        private clsPersona persona;
 		·ViewModels
 			VM_ListadoPersonas:
 				-Propiedades:
@@ -141,3 +140,91 @@ Capa UI (ASP):
 		Delete: necesita una persona con el nombre de su departamento.
 		Edit: necesita una persona seleccionada con una lista de departamentos.
 		Details: necesita una persona con el nombre de su departamento.
+
+
+Capa UI (UWP):
+	·Models
+		PersonanombreDepartamento:
+			-Propiedades:
+				string nombreDepartamento.
+				clsPersona persona.
+			-Métodos:
+				getters y setters.
+				contructores (con y sin parámetros).
+
+	·ViewModels
+		DepartamentosVM
+			-Propiedades
+				ObservableCollection<clsDepartamento> listaDepartamentos.
+        			ObservableCollection<clsDepartamento> ListaDepartamentosFiltrada.
+        			clsDepartamento departamento;
+        			string textoBox;
+        			DelegateCommand commandFiltrar;
+        			DelegateCommand commandEliminar;
+        			DelegateCommand commandGuardar;
+        			string Cadena
+			Métodos:
+				getters y setters.
+				contructores.
+				private bool FiltrarCommand_CanExecute(): Este método comprueba que el comando filtrar se pueda ejecutar.
+				private void FiltrarCommand_Execute(): Este método es la ejecucion del comando filtrar. Asigna a la lista de los departamentos filtrados aquellos departamentos de la lista que contenga en el nombre en el contenido del textbox.
+				private async void EliminarCommand_Execute(): Este método es la ejecucion del comando eliminar. Pregunta si quieres eliminar a dicho departamento. Si seleccionas sí, lo elimina.
+				private bool EliminarCommand_CanExecute(): Este método comprueba que el comando eliminar se pueda ejecutar.
+				private async void GuardarCommand_Execute(): Este método es la ejecucion del comando guardar. Dependiendo de si el id es por defecto (0) o no, se guardan creando uno nuevo o editándose uno antiguo.
+				private bool GuardarCommand_CanExecute(): Este método comprueba que el comando guardar se pueda ejecutar.
+				private async void RellenarLista(): Este método rellena la lista de departamentos extrayéndolas de la bbdd.
+
+		PersonaListaDepartamentosVM
+			-Propiedades
+				ObservableCollection<clsDepartamento> listaDepartamentos
+        			clsPersona persona
+        			DelegateCommand commandGuardar
+			-Métodos
+				getters y setters.
+				contructores.
+				private async void GuardarCommand_Execute(): Este método es la ejecucion del comando guardar. Dependiendo de si el id es por defecto (0) o no, se guardan creando uno nuevo o editándose uno antiguo.
+				private bool GuardarCommand_CanExecute(): Este método comprueba que el comando guardar se pueda ejecutar.
+
+		PersonaNombreDepartamentoVM
+			-Propiedades
+				ObservableCollection<PersonaNombreDepartamento> listaPersonas
+        			ObservableCollection<PersonaNombreDepartamento> ListaPersonasFiltrada
+        			PersonaNombreDepartamento persona
+        			string textoBox
+        			DelegateCommand commandFiltrar
+        			DelegateCommand commandEliminar
+        			string Cadena
+			-Métodos
+				getters y setters.
+				contructores.
+				private bool FiltrarCommand_CanExecute(): Este método comprueba que el comando filtrar se pueda ejecutar.
+				private void FiltrarCommand_Execute(): Este método es la ejecucion del comando filtrar. Asigna a la lista de las personas filtradas aquellas personas de la lista que contenga en el nombre o en el apellido, en el contenido del textbox.
+				private async void EliminarCommand_Execute(): Este método es la ejecucion del comando eliminar. Pregunta si quieres eliminar a dicho personaSi seleccionas sí, lo elimina.
+				private bool EliminarCommand_CanExecute(): Este método comprueba que el comando eliminar se pueda ejecutar.
+
+
+	·Views
+		CrearDepartamento
+		CrearPersona
+		DepartamentosView
+		EditarDepartamento
+		EditarPersona
+		Login
+		MainPage
+		PersonasView
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

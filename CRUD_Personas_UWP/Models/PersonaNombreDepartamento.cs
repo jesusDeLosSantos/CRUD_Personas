@@ -10,6 +10,14 @@ using System.Threading.Tasks;
 
 namespace CRUD_Personas_UWP.Models
 {
+
+    /// <summary>
+    /// Esta clase es un modelo que crea un nuevo objeto a raíz de una persona y un departamento extraídos de la capa BL.
+    ///
+    /// PROPIEDADES
+    ///   _nombreDepartamento: cadena. Consultable/modificable. 
+    ///   _persona: clsPersona. Consultable/modificable.
+    /// </summary>
     public class PersonaNombreDepartamento : clsVMBase
     {
         #region atributos

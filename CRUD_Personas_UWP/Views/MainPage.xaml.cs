@@ -31,7 +31,7 @@ namespace CRUD_Personas_UWP
         }
 
         /// <summary>
-        /// Event associated to the click that makes you navigate to the frame PersonasView.
+        /// Evento asociado al click que navega al frame PersonasView.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -41,7 +41,7 @@ namespace CRUD_Personas_UWP
         }
 
         /// <summary>
-        /// Event associated to the click that makes you navigate to the frame NVGallery.
+        /// Evento asociado al click que navega al frame DepartamentosView.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -50,6 +50,11 @@ namespace CRUD_Personas_UWP
             contentFrame.Navigate(typeof(DepartamentosView));
         }
 
+        /// <summary>
+        /// Evento asociado al click que navega hacia detras en los frame del contenedor. En caso de que salga del contenedor, irá al frame anterior de la app.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void nvSample_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
         {
             try 

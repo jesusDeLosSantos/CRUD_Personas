@@ -14,6 +14,7 @@ namespace CRUD_Personas_UWP.ViewModels
 {
     public class DepartamentosVM : clsVMBase
     {
+        #region atributos
         private ObservableCollection<clsDepartamento> listaDepartamentos;
         public ObservableCollection<clsDepartamento> ListaDepartamentosFiltrada { get; set; }
         private clsDepartamento departamento;
@@ -22,9 +23,9 @@ namespace CRUD_Personas_UWP.ViewModels
         private DelegateCommand commandEliminar;
         private DelegateCommand commandGuardar;
         public string Cadena { get; set; }
+        #endregion
 
-
-
+        #region getters y setters
         public clsDepartamento Departamento
         {
             get
@@ -81,23 +82,29 @@ namespace CRUD_Personas_UWP.ViewModels
                 return commandGuardar;
             }
         }
+        #endregion
 
-
-
+        #region constructores
         public DepartamentosVM()
         {
             RellenarLista();
             ListaDepartamentosFiltrada = listaDepartamentos;
             Departamento= new clsDepartamento();
         }
+        #endregion
 
-
-
+        #region metodos
         private bool FiltrarCommand_CanExecute()
         {
             return !String.IsNullOrEmpty(TextoBox);
         }
 
+        /// <summary>
+        /// Cabecera: private void FiltrarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando filtrar. Asigna a la lista de los departamentos filtrados aquellos departamentos de la lista que contenga en el nombre el contenido del textbox.
+        /// Precondicion: listaDepartamento no sea null.
+        /// Postcondicion: listaDepartamentosFiltrada contendra los departamentos con dichas condiciones.
+        /// </summary>
         private void FiltrarCommand_Execute()
         {
             ListaDepartamentosFiltrada = new ObservableCollection<clsDepartamento>(from d in listaDepartamentos
@@ -105,7 +112,12 @@ namespace CRUD_Personas_UWP.ViewModels
             NotifyPropertyChanged("ListaDepartamentosFiltrada");
         }
 
-
+        /// <summary>
+        /// Cabecera: private async void EliminarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando eliminar. Pregunta si quieres eliminar a dicho departamento. Si seleccionas sí, lo elimina.
+        /// Precondicion: departamento no sea null.
+        /// Postcondicion: si se acepta, el departamento se borra.
+        /// </summary>
         private async void EliminarCommand_Execute()
         {
             ContentDialog confirmar = new ContentDialog()
@@ -133,13 +145,13 @@ namespace CRUD_Personas_UWP.ViewModels
                     };
                 }
             }
-            NotifyPropertyChanged("ListaClientesFiltrada");
+            NotifyPropertyChanged("ListaPersonasFiltrada");
         }
 
         private bool EliminarCommand_CanExecute()
         {
             bool valid = false;
-            if (departamento != null && departamento.Id!=0)
+            if (departamento != null && departamento.Id!=0)     //Esto evita que se puedan eliminar departamentos nulos o por defecto (con id=0)
             {
                 valid = true;
             }
@@ -147,11 +159,16 @@ namespace CRUD_Personas_UWP.ViewModels
             return valid;
         }
 
+        /// <summary>
+        /// Cabecera: private async void GuardarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando guardar. Dependiendo de si el id es por defecto (0) o no, se guardan creando uno nuevo o editándose uno antiguo.
+        /// Postcondicion: se crea un nuevo departamento si el id es 0, o se edita según su id.
+        /// </summary>
         private async void GuardarCommand_Execute()
         {
             try
             {
-                if (Departamento.Id == 0)
+                if (Departamento.Id == 0)       
                     GestoraAccionesDepartamentosBL.addDepartamentosBL(Departamento);
                 else
                     GestoraAccionesDepartamentosBL.alterDepartamentosBL(Departamento);
@@ -178,9 +195,15 @@ namespace CRUD_Personas_UWP.ViewModels
         }
         private bool GuardarCommand_CanExecute()
         {
-            return true; //(!String.IsNullOrEmpty(Persona.Nombre) && !String.IsNullOrEmpty(Persona.Apellidos));
+            return true; 
         }
 
+        /// <summary>
+        /// Cabecera: private async void RellenarLista()
+        /// Descripcion: Este método rellena la lista de departamentos extrayéndolas de la bbdd.
+        /// Precondicion: no deben haber problemas con la conexión de la bbdd.
+        /// Postcondicion: se rellena la lista del departamento.
+        /// </summary>
         private async void RellenarLista()
         {
             listaDepartamentos = new ObservableCollection<clsDepartamento>();
@@ -201,6 +224,7 @@ namespace CRUD_Personas_UWP.ViewModels
                 ContentDialogResult resultado = await error.ShowAsync();
             }
         }
+        #endregion
     }
 }
 

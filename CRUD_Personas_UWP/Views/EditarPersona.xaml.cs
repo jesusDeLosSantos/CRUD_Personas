@@ -30,13 +30,17 @@ namespace CRUD_Personas_UWP.Views
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento que recibe cualquier parametro y es casteado a persona, para que si esta no es nula, enviarla al vm de la vista.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             PersonaNombreDepartamento persona = (PersonaNombreDepartamento) e.Parameter;
             if (persona != null)
             {
                 PersonaListaDepartamentosVM vm = (PersonaListaDepartamentosVM)this.DataContext;
-                vm.Cliente = persona.Persona;
+                vm.Persona = persona.Persona;
             }
         }
     }

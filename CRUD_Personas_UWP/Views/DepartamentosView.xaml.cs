@@ -27,11 +27,21 @@ namespace CRUD_Personas_UWP.Views
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento asociado al click que navega al frame CrearDepartamento.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickCreate(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CrearDepartamento));
         }
 
+        /// <summary>
+        /// Evento asociado al click que navega al frame EditarDepartamento.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEdit(object sender, RoutedEventArgs e)
         {
             if (lsvPersonas.SelectedItem != null)

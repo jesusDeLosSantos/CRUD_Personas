@@ -18,7 +18,7 @@ namespace CRUD_Personas_UWP.ViewModels
 
         #region atributos
         private ObservableCollection<clsDepartamento> listaDepartamentos;
-        private clsPersona cliente;
+        private clsPersona persona;
         private DelegateCommand commandGuardar;
         #endregion
 
@@ -26,21 +26,21 @@ namespace CRUD_Personas_UWP.ViewModels
         public PersonaListaDepartamentosVM()
         {
             ListaDepartamentos = new ObservableCollection<clsDepartamento>(new clsListadoDepartamentosBL().Departamentos);
-            Cliente = new clsPersona();
+            Persona = new clsPersona();
         }
         #endregion
 
         #region getters y setters
         public ObservableCollection<clsDepartamento> ListaDepartamentos { get => listaDepartamentos; set => listaDepartamentos = value; }
-        public clsPersona Cliente {
+        public clsPersona Persona {
             get
             {
-                return cliente;
+                return persona;
             }
             set
             {
-                cliente = value;
-                NotifyPropertyChanged("Cliente");
+                persona = value;
+                NotifyPropertyChanged("Persona");
                 if (commandGuardar != null)
                     commandGuardar.RaiseCanExecuteChanged();
             }
@@ -56,14 +56,19 @@ namespace CRUD_Personas_UWP.ViewModels
         #endregion
 
         #region metodos
+        /// <summary>
+        /// Cabecera: private async void GuardarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando guardar. Dependiendo de si el id es por defecto (0) o no, se guardan creando uno nuevo o editándose uno antiguo.
+        /// Postcondicion: se crea una nueva persona si el id es 0, o se edita según su id.
+        /// </summary>
         private async void GuardarCommand_Execute()
         {
             try
             {
-                if (Cliente.Id == 0)
-                    GestoraAccionesPersonasBL.addPersonaBL(Cliente);
+                if (Persona.Id == 0)
+                    GestoraAccionesPersonasBL.addPersonaBL(Persona);
                 else
-                    GestoraAccionesPersonasBL.alterPersonaBL(Cliente);
+                    GestoraAccionesPersonasBL.alterPersonaBL(Persona);
 
                 ContentDialog guardar = new ContentDialog()
                 {
@@ -87,7 +92,7 @@ namespace CRUD_Personas_UWP.ViewModels
         }
         private bool GuardarCommand_CanExecute()
         {
-            return true; //(!String.IsNullOrEmpty(Persona.Nombre) && !String.IsNullOrEmpty(Persona.Apellidos));
+            return true; //(!String.IsNullOrEmpty(persona.Nombre) && !String.IsNullOrEmpty(persona.Apellidos));         Esto se supone que es para que no se pueda guardar si no se han rellenado el nombre y apellidos, pero no funcionaba bien, así que lo comento.
         }
         #endregion
     }

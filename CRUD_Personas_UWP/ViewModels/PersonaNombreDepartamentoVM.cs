@@ -15,27 +15,27 @@ namespace CRUD_Personas_UWP.ViewModels
 {
     public class PersonaNombreDepartamentoVM : clsVMBase
     {
-
-        private ObservableCollection<PersonaNombreDepartamento> listaClientes;
-        public ObservableCollection<PersonaNombreDepartamento> ListaClientesFiltrada { get; set; }
-        private PersonaNombreDepartamento cliente;
+        #region atributos
+        private ObservableCollection<PersonaNombreDepartamento> listaPersonas;
+        public ObservableCollection<PersonaNombreDepartamento> ListaPersonasFiltrada { get; set; }
+        private PersonaNombreDepartamento persona;
         private string textoBox;
         private DelegateCommand commandFiltrar;
         private DelegateCommand commandEliminar;
         public string Cadena { get; set; }
+        #endregion
 
-
-
-        public PersonaNombreDepartamento Cliente
+        #region getters y setters
+        public PersonaNombreDepartamento Persona
         {
             get
             {
-                return cliente;
+                return persona;
             }
             set
             {
-                cliente = value;
-                NotifyPropertyChanged("Cliente");
+                persona = value;
+                NotifyPropertyChanged("Persona");
                 commandEliminar.RaiseCanExecuteChanged();
             }
         }
@@ -48,8 +48,8 @@ namespace CRUD_Personas_UWP.ViewModels
                 commandFiltrar.RaiseCanExecuteChanged();
                 if (String.IsNullOrEmpty(TextoBox))
                 {
-                    ListaClientesFiltrada = listaClientes;
-                    NotifyPropertyChanged("ListaClientesFiltrada");
+                    ListaPersonasFiltrada = listaPersonas;
+                    NotifyPropertyChanged("ListaPersonasFiltrada");
                 }
             }
         }
@@ -72,34 +72,28 @@ namespace CRUD_Personas_UWP.ViewModels
             }
 
         }
-        private bool FiltrarCommand_CanExecute()
-        {
-            return !String.IsNullOrEmpty(TextoBox);
-        }
-        private void FiltrarCommand_Execute()
-        {
+        #endregion
 
-            ListaClientesFiltrada = new ObservableCollection<PersonaNombreDepartamento>(from p in listaClientes
-                                                                                        where p.Persona.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Persona.Apellidos.ToLower().Contains(TextoBox.ToLower())
-                                                                                        select p);
-            NotifyPropertyChanged("ListaClientesFiltrada");
-        }
-
-
-
+        #region constructores
         public PersonaNombreDepartamentoVM()
         {
             RellenarLista();
-            ListaClientesFiltrada = listaClientes;
+            ListaPersonasFiltrada = listaPersonas;
         }
+        #endregion
 
-
-
+        #region metodos
+        /// <summary>
+        /// Cabecera: private async void EliminarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando eliminar. Pregunta si quieres eliminar a dicho departamento. Si seleccionas sí, lo elimina.
+        /// Precondicion: persona no sea null.
+        /// Postcondicion: si se acepta, la persona se borra.
+        /// </summary>
         private async void EliminarCommand_Execute()
         {
             ContentDialog confirmar = new ContentDialog()
             {
-                Content = "¿Quieres eliminar " + cliente.Persona.Nombre + "?",
+                Content = "¿Quieres eliminar " + persona.Persona.Nombre + "?",
                 SecondaryButtonText = "Sí",
                 CloseButtonText = "No"
             };
@@ -109,9 +103,9 @@ namespace CRUD_Personas_UWP.ViewModels
             {
                 try
                 {
-                    GestoraAccionesPersonasBL.deletePersonaBL(cliente.Persona.Id);
-                    listaClientes.Remove(cliente);
-                    ListaClientesFiltrada = listaClientes;
+                    GestoraAccionesPersonasBL.deletePersonaBL(persona.Persona.Id);
+                    listaPersonas.Remove(persona);
+                    ListaPersonasFiltrada = listaPersonas;
                 }
                 catch
                 {
@@ -122,13 +116,13 @@ namespace CRUD_Personas_UWP.ViewModels
                     };
                 }
             }
-            NotifyPropertyChanged("ListaClientesFiltrada");
+            NotifyPropertyChanged("ListaPersonasFiltrada");
         }
 
         private bool EliminarCommand_CanExecute()
         {
             bool valid = false;
-            if (cliente != null)
+            if (persona != null)        //Evita que el comando se pueda ejecutar si la persona es nula.
             {
                 valid = true;
             }
@@ -136,16 +130,41 @@ namespace CRUD_Personas_UWP.ViewModels
             return valid;
         }
 
+        private bool FiltrarCommand_CanExecute()
+        {
+            return !String.IsNullOrEmpty(TextoBox);
+        }
+
+        /// <summary>
+        /// Cabecera: private void FiltrarCommand_Execute()
+        /// Descripcion: Este método es la ejecucion del comando filtrar. Asigna a la lista de las personas filtradas aquellas personas de la lista que contengan en el nombre o en el apellido, el contenido del textbox.
+        /// Precondicion: listaDepartamento no sea null.
+        /// Postcondicion: listaDepartamentosFiltrada contendra las personas con dichas condiciones.
+        /// </summary>
+        private void FiltrarCommand_Execute()
+        {
+
+            ListaPersonasFiltrada = new ObservableCollection<PersonaNombreDepartamento>(from p in listaPersonas
+                                                                                        where p.Persona.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Persona.Apellidos.ToLower().Contains(TextoBox.ToLower())
+                                                                                        select p);
+            NotifyPropertyChanged("ListaPersonasFiltrada");
+        }
 
 
+        /// <summary>
+        /// Cabecera: private async void RellenarLista()
+        /// Descripcion: Este método rellena la lista de personas extrayéndolas de la bbdd.
+        /// Precondicion: no deben haber problemas con la conexión de la bbdd.
+        /// Postcondicion: se rellena la lista de las personas.
+        /// </summary>
         private async void RellenarLista()
         {
             try
             {
-                listaClientes = new ObservableCollection<PersonaNombreDepartamento>();
+                listaPersonas = new ObservableCollection<PersonaNombreDepartamento>();
                 foreach (clsPersona p in new clsListadoPersonasBL().Personas)
                 {
-                    listaClientes.Add(new PersonaNombreDepartamento(p));
+                    listaPersonas.Add(new PersonaNombreDepartamento(p));
                 }
             }
             catch
@@ -158,6 +177,7 @@ namespace CRUD_Personas_UWP.ViewModels
                 ContentDialogResult resultado = await error.ShowAsync();
             }
         }
-    }        
+        #endregion
+    }
 }
 
