@@ -25,7 +25,6 @@ namespace CRUD_Personas_UWP.Views
     /// </summary>
     public sealed partial class Editar : Page
     {
-
         public Editar()
         {
             this.InitializeComponent();
@@ -34,8 +33,11 @@ namespace CRUD_Personas_UWP.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             PersonaNombreDepartamento persona = (PersonaNombreDepartamento) e.Parameter;
-            PersonaListaDepartamentosVM vm = (PersonaListaDepartamentosVM)this.DataContext;
-            vm.Cliente = persona.Persona;
+            if (persona != null)
+            {
+                PersonaListaDepartamentosVM vm = (PersonaListaDepartamentosVM)this.DataContext;
+                vm.Cliente = persona.Persona;
+            }
         }
     }
 }

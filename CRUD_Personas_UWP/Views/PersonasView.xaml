@@ -29,7 +29,7 @@
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaClientesFiltrada}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding Cliente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaClientesFiltrada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding Cliente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

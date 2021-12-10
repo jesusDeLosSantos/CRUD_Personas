@@ -25,7 +25,7 @@ namespace CRUD_Personas_UWP.Models
         }
         #endregion
 
-        #region constructor
+        #region constructores
         public PersonaNombreDepartamento(int id)
         {
             persona = new clsListadoPersonasBL(id).Persona;
@@ -36,6 +36,11 @@ namespace CRUD_Personas_UWP.Models
         {
             this.persona = persona;
             nombreDepartamento = new clsListadoDepartamentosBL(persona.IdDepartamento).Departamento.Nombre;
+        }
+
+        public PersonaNombreDepartamento()
+        {
+
         }
         #endregion
     }

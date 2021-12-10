@@ -30,19 +30,25 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="Nombre:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding CLiente.Cliente.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="15" Width="200"/>
+            <TextBox Text="{Binding Cliente.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="10"/>
             <TextBlock Text="Apellidos:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding Cliente.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="Auto" Margin="15"/>
+            <TextBox Text="{Binding Cliente.Apellidos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="Auto" Margin="10"/>
             <TextBlock Text="Fecha de nacimiento:" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding Cliente.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="Auto" Margin="15"/>
+            <TextBox Text="{Binding Cliente.FechaNacimiento, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="2" Grid.Column="1" Width="Auto" Margin="10"/>
             <TextBlock Text="Teléfono:" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding Cliente.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="Auto" Margin="15"/>
+            <TextBox Text="{Binding Cliente.Telefono, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="3" Grid.Column="1" Width="Auto" Margin="10"/>
             <TextBlock Text="Dirección:" Grid.Column="0" Grid.Row="4" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding Cliente.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="4" Grid.Column="1" Margin="15"/>
+            <TextBox Text="{Binding Cliente.Direccion, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="4" Grid.Column="1" Margin="10"/>
             <TextBlock Text="Departamento:" Grid.Column="0" Grid.Row="5" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding ListaDepartamentos, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="5" Grid.Column="1" Margin="15"/>
+            <ComboBox ItemsSource="{Binding ListaDepartamentos}" SelectedValue="{Binding Cliente.IdDepartamento}" Grid.Row="5" Grid.Column="1" MinWidth="300" Margin="10"> <!--Problema acá-->
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock x:Name="nombreDepartamento" Text="{Binding Nombre}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock Text="Foto:" Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom" FontSize="20" Margin="10"/>
-            <TextBox Text="{Binding Cliente.Foto, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="6" Grid.Column="1" Margin="15"/>
+            <TextBox Text="{Binding Cliente.Foto, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="6" Grid.Column="1" Margin="10"/>
         </Grid>
 
         <AppBarButton Icon="Save" Command="{Binding CommandGuardar}" RelativePanel.Below="grid" HorizontalAlignment="Center"/>

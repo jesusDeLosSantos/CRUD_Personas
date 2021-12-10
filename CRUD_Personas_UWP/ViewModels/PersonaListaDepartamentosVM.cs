@@ -21,16 +21,17 @@ namespace CRUD_Personas_UWP.ViewModels
         private clsPersona cliente;
         private DelegateCommand commandGuardar;
         #endregion
-        #region construccion
 
+        #region constructores
         public PersonaListaDepartamentosVM()
         {
             ListaDepartamentos = new ObservableCollection<clsDepartamento>(new clsListadoDepartamentosBL().Departamentos);
             Cliente = new clsPersona();
         }
-
         #endregion
-        #region propiedades publicas
+
+
+        #region getters y setters
         public ObservableCollection<clsDepartamento> ListaDepartamentos { get => listaDepartamentos; set => listaDepartamentos = value; }
         public clsPersona Cliente {
             get
@@ -40,7 +41,7 @@ namespace CRUD_Personas_UWP.ViewModels
             set
             {
                 cliente = value;
-                NotifyPropertyChanged("Persona");
+                NotifyPropertyChanged("Cliente");
                 if (commandGuardar != null)
                     commandGuardar.RaiseCanExecuteChanged();
             }
@@ -54,6 +55,8 @@ namespace CRUD_Personas_UWP.ViewModels
             }
         }
         #endregion
+
+
         #region Commands
         private async void GuardarCommand_Execute()
         {
@@ -64,25 +67,23 @@ namespace CRUD_Personas_UWP.ViewModels
                 else
                     GestoraAccionesPersonasBL.alterPersonaBL(Cliente);
 
-                ContentDialog mensajeConfirmacion = new ContentDialog()
+                ContentDialog guardar = new ContentDialog()
                 {
-                    Title = "PERSONA GUARDADA",
-                    Content = "La persona se ha guardado",
-                    CloseButtonText = "Confirmar"
+                    Content = "Se ha guardado la persona",
+                    CloseButtonText = "Ok"
                 };
 
-                ContentDialogResult respuesta = await mensajeConfirmacion.ShowAsync();
+                ContentDialogResult respuesta = await guardar.ShowAsync();
             }
             catch
             {
-                ContentDialog mensajeExito = new ContentDialog()
+                ContentDialog error = new ContentDialog()
                 {
-                    Title = "ERROR",
-                    Content = "No se ha eliminado la persona correctamente",
-                    SecondaryButtonText = "Volver"
+                    Content = "Ha ocurrido un error.",
+                    SecondaryButtonText = "Ok"
                 };
 
-                ContentDialogResult resultado = await mensajeExito.ShowAsync();
+                ContentDialogResult resultado = await error.ShowAsync();
             }
 
         }

@@ -71,7 +71,7 @@ namespace CRUD_Personas_UWP.ViewModels
         {
             get
             {
-                commandEliminar = new DelegateCommand(EliminarCommand_ExecuteAsync, EliminarCommand_CanExecute);
+                commandEliminar = new DelegateCommand(EliminarCommand_Execute, EliminarCommand_CanExecute);
                 NotifyPropertyChanged("CommandEliminar");
                 return commandEliminar;
             }
@@ -92,7 +92,7 @@ namespace CRUD_Personas_UWP.ViewModels
         }
 
 
-        private async void EliminarCommand_ExecuteAsync()
+        private async void EliminarCommand_Execute()
         {
             ContentDialog confirmar = new ContentDialog()
             {
@@ -117,6 +117,7 @@ namespace CRUD_Personas_UWP.ViewModels
                     };
                 }
             }
+            NotifyPropertyChanged("ListaClientesFiltrada");
         }
 
         private bool EliminarCommand_CanExecute()
@@ -132,13 +133,12 @@ namespace CRUD_Personas_UWP.ViewModels
 
         public PersonaNombreDepartamentoVM()
         {
-            listaClientes = new ObservableCollection<PersonaNombreDepartamento>();
+            listaClientes = new ObservableCollection<PersonaNombreDepartamento>(); //Por esto no se actualiza a tiempo real
             foreach (clsPersona p in new clsListadoPersonasBL().Personas)
             {
                 listaClientes.Add(new PersonaNombreDepartamento(p));
             }
             ListaClientesFiltrada = listaClientes;
-
         }
     }
 }

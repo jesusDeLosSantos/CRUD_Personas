@@ -34,7 +34,10 @@ namespace CRUD_Personas_UWP.Views
 
         private void ClickEdit(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Editar), lsvPersonas.SelectedItem);
+            if (lsvPersonas.SelectedItem != null)
+            {
+                this.Frame.Navigate(typeof(Editar), lsvPersonas.SelectedItem);
+            }
         }
     }
 }
