@@ -9,8 +9,7 @@ namespace CRUD_Personas_Entities
 
         public clsDepartamento() 
         {
-            Id = 3;
-            Nombre = "godd";
+            Id = 0;
         }
 
         public clsDepartamento(string s)

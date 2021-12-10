@@ -52,7 +52,14 @@ namespace CRUD_Personas_UWP
 
         private void nvSample_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
         {
-            contentFrame.GoBack();
+            try 
+            { 
+                contentFrame.GoBack(); 
+            }
+            catch (Exception ex)
+            {
+                App.TryGoBack();
+            }
         }
     }
 }

@@ -2,13 +2,56 @@
     x:Class="CRUD_Personas_UWP.Views.DepartamentosView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CRUD_Personas_UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:vm="using:CRUD_Personas_UWP.ViewModels"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
 
-    </Grid>
+    <Page.DataContext>
+        <vm:DepartamentosVM/>
+    </Page.DataContext>
+
+    <RelativePanel>
+        <TextBox RelativePanel.RightOf="search" Width="400" Text="{Binding TextoBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <AppBarButton RelativePanel.RightOf="botones" x:Name="search" Icon="Find" Height="35" Margin="20,0" Command="{Binding CommandFiltrar}"/>
+        <StackPanel x:Name="botones" Orientation="Horizontal">
+            <AppBarButton Icon="Delete" Command="{Binding CommandEliminar}"/>
+            <AppBarButton Icon="Add" Click="ClickCreate"/>
+            <AppBarButton Icon="Edit" Click="ClickEdit"/>
+        </StackPanel>
+        <Grid Name="listaDePersonas" RelativePanel.AlignBottomWithPanel="True" RelativePanel.Below="botones">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <ListView Name="lsvPersonas" ItemsSource="{Binding ListaDepartamentosFiltrada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.VerticalScrollMode="Auto" Grid.Row="0" Grid.Column="0" SelectedItem="{Binding Departamento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Nombre}" Margin="6,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid x:Name="grid" RelativePanel.RightOf="listaDePersonas" RelativePanel.Below="botones" RelativePanel.AlignRightWithPanel="True" Margin="40" RelativePanel.AlignLeftWith="search" BorderBrush="LightCoral" BorderThickness="3" CornerRadius="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Id:" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding Departamento.Id, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="15"/>
+            <TextBlock Text="Nombre:" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" FontSize="20" Margin="10" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding Departamento.Nombre, Mode=TwoWay, UpdateSourceTrigger= PropertyChanged}" Grid.Row="1" Grid.Column="1" Width="Auto" Margin="15"/>
+        </Grid>
+    </RelativePanel>
 </Page>

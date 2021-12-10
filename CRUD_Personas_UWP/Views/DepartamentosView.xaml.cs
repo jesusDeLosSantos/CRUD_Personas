@@ -26,5 +26,18 @@ namespace CRUD_Personas_UWP.Views
         {
             this.InitializeComponent();
         }
+
+        private void ClickCreate(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CrearDepartamento));
+        }
+
+        private void ClickEdit(object sender, RoutedEventArgs e)
+        {
+            if (lsvPersonas.SelectedItem != null)
+            {
+                this.Frame.Navigate(typeof(EditarDepartamento), lsvPersonas.SelectedItem);
+            }
+        }
     }
 }

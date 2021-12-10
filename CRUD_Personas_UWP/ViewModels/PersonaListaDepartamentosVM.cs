@@ -30,7 +30,6 @@ namespace CRUD_Personas_UWP.ViewModels
         }
         #endregion
 
-
         #region getters y setters
         public ObservableCollection<clsDepartamento> ListaDepartamentos { get => listaDepartamentos; set => listaDepartamentos = value; }
         public clsPersona Cliente {
@@ -56,8 +55,7 @@ namespace CRUD_Personas_UWP.ViewModels
         }
         #endregion
 
-
-        #region Commands
+        #region metodos
         private async void GuardarCommand_Execute()
         {
             try
@@ -69,7 +67,7 @@ namespace CRUD_Personas_UWP.ViewModels
 
                 ContentDialog guardar = new ContentDialog()
                 {
-                    Content = "Se ha guardado la persona",
+                    Content = "Se han guardado los cambios.",
                     CloseButtonText = "Ok"
                 };
 
@@ -80,7 +78,7 @@ namespace CRUD_Personas_UWP.ViewModels
                 ContentDialog error = new ContentDialog()
                 {
                     Content = "Ha ocurrido un error.",
-                    SecondaryButtonText = "Ok"
+                    CloseButtonText = "Ok"
                 };
 
                 ContentDialogResult resultado = await error.ShowAsync();

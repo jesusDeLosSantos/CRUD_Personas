@@ -32,7 +32,7 @@ namespace CRUD_Personas_DAL.Listados
 
             try
             {
-                if (reader.Read())
+                if (reader.HasRows)
                 {
                     while (reader.Read())
                     {

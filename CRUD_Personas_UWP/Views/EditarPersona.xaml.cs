@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CRUD_Personas_Entities;
+using CRUD_Personas_UWP.Models;
+using CRUD_Personas_UWP.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,23 +23,20 @@ namespace CRUD_Personas_UWP.Views
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class PersonasView : Page
+    public sealed partial class EditarPersona : Page
     {
-        public PersonasView()
+        public EditarPersona()
         {
-                this.InitializeComponent();   
+            this.InitializeComponent();
         }
 
-        private void ClickCreate(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-           this.Frame.Navigate(typeof(CrearPersona));
-        }
-
-        private void ClickEdit(object sender, RoutedEventArgs e)
-        {
-            if (lsvPersonas.SelectedItem != null)
+            PersonaNombreDepartamento persona = (PersonaNombreDepartamento) e.Parameter;
+            if (persona != null)
             {
-                this.Frame.Navigate(typeof(EditarPersona), lsvPersonas.SelectedItem);
+                PersonaListaDepartamentosVM vm = (PersonaListaDepartamentosVM)this.DataContext;
+                vm.Cliente = persona.Persona;
             }
         }
     }

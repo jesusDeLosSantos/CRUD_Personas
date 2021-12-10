@@ -22,10 +22,10 @@ namespace CRUD_Personas_UWP.ViewModels
         private string textoBox;
         private DelegateCommand commandFiltrar;
         private DelegateCommand commandEliminar;
-
-
-
         public string Cadena { get; set; }
+
+
+
         public PersonaNombreDepartamento Cliente
         {
             get
@@ -39,8 +39,6 @@ namespace CRUD_Personas_UWP.ViewModels
                 commandEliminar.RaiseCanExecuteChanged();
             }
         }
-
-
         public string TextoBox
         {
             get { return textoBox; }
@@ -55,8 +53,6 @@ namespace CRUD_Personas_UWP.ViewModels
                 }
             }
         }
-
-
         public DelegateCommand CommandFiltrar
         {
             get
@@ -66,7 +62,6 @@ namespace CRUD_Personas_UWP.ViewModels
             }
 
         }
-
         public DelegateCommand CommandEliminar
         {
             get
@@ -77,26 +72,34 @@ namespace CRUD_Personas_UWP.ViewModels
             }
 
         }
-
         private bool FiltrarCommand_CanExecute()
         {
             return !String.IsNullOrEmpty(TextoBox);
         }
-
         private void FiltrarCommand_Execute()
         {
+
             ListaClientesFiltrada = new ObservableCollection<PersonaNombreDepartamento>(from p in listaClientes
-                                                                where p.Persona.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Persona.Apellidos.ToLower().Contains(TextoBox.ToLower())
-                                                                select p);
+                                                                                        where p.Persona.Nombre.ToLower().Contains(TextoBox.ToLower()) || p.Persona.Apellidos.ToLower().Contains(TextoBox.ToLower())
+                                                                                        select p);
             NotifyPropertyChanged("ListaClientesFiltrada");
         }
+
+
+
+        public PersonaNombreDepartamentoVM()
+        {
+            RellenarLista();
+            ListaClientesFiltrada = listaClientes;
+        }
+
 
 
         private async void EliminarCommand_Execute()
         {
             ContentDialog confirmar = new ContentDialog()
             {
-                Content = "¿Quieres eliminar esta persona permanentemente?",
+                Content = "¿Quieres eliminar " + cliente.Persona.Nombre + "?",
                 SecondaryButtonText = "Sí",
                 CloseButtonText = "No"
             };
@@ -107,6 +110,8 @@ namespace CRUD_Personas_UWP.ViewModels
                 try
                 {
                     GestoraAccionesPersonasBL.deletePersonaBL(cliente.Persona.Id);
+                    listaClientes.Remove(cliente);
+                    ListaClientesFiltrada = listaClientes;
                 }
                 catch
                 {
@@ -131,14 +136,28 @@ namespace CRUD_Personas_UWP.ViewModels
             return valid;
         }
 
-        public PersonaNombreDepartamentoVM()
+
+
+        private async void RellenarLista()
         {
-            listaClientes = new ObservableCollection<PersonaNombreDepartamento>(); //Por esto no se actualiza a tiempo real
-            foreach (clsPersona p in new clsListadoPersonasBL().Personas)
+            try
             {
-                listaClientes.Add(new PersonaNombreDepartamento(p));
+                listaClientes = new ObservableCollection<PersonaNombreDepartamento>();
+                foreach (clsPersona p in new clsListadoPersonasBL().Personas)
+                {
+                    listaClientes.Add(new PersonaNombreDepartamento(p));
+                }
             }
-            ListaClientesFiltrada = listaClientes;
+            catch
+            {
+                ContentDialog error = new ContentDialog()
+                {
+                    Content = "Deja de tocar el server Fernando.",
+                    SecondaryButtonText = "Ok"
+                };
+                ContentDialogResult resultado = await error.ShowAsync();
+            }
         }
-    }
+    }        
 }
+

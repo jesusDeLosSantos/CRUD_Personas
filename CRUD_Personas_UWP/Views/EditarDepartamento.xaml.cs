@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CRUD_Personas_Entities;
+using CRUD_Personas_UWP.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,11 +22,21 @@ namespace CRUD_Personas_UWP.Views
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class Crear : Page
+    public sealed partial class EditarDepartamento : Page
     {
-        public Crear()
+        public EditarDepartamento()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            clsDepartamento departamento = (clsDepartamento)e.Parameter;
+            if (departamento != null)
+            {
+                DepartamentosVM vm = (DepartamentosVM)this.DataContext;
+                vm.Departamento = departamento;
+            }
         }
     }
 }

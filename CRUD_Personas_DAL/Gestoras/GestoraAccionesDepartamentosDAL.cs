@@ -29,7 +29,7 @@ namespace CRUD_Personas_DAL.Gestoras
 
             try
             {
-                miComando.CommandText = "DELETE FROM Departamentos WHERE IDDepartamento=@id";
+                miComando.CommandText = "EXECUTE BorrarDepartamentos @id";
                 miComando.Connection = conexion;
 
                 resultado = miComando.ExecuteNonQuery();

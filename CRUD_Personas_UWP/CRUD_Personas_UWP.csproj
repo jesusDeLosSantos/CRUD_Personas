@@ -119,19 +119,29 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\DepartamentosVM.cs" />
     <Compile Include="ViewModels\PersonaListaDepartamentosVM.cs" />
     <Compile Include="Models\PersonaNombreDepartamento.cs" />
     <Compile Include="ViewModels\PersonaNombreDepartamentoVM.cs" />
     <Compile Include="ViewModels\utillities\clsVMBase.cs" />
     <Compile Include="ViewModels\utillities\DelegateCommand.cs" />
-    <Compile Include="Views\Crear.xaml.cs">
-      <DependentUpon>Crear.xaml</DependentUpon>
+    <Compile Include="Views\CrearDepartamento.xaml.cs">
+      <DependentUpon>CrearDepartamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CrearPersona.xaml.cs">
+      <DependentUpon>CrearPersona.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DepartamentosView.xaml.cs">
       <DependentUpon>DepartamentosView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Editar.xaml.cs">
-      <DependentUpon>Editar.xaml</DependentUpon>
+    <Compile Include="Views\EditarDepartamento.xaml.cs">
+      <DependentUpon>EditarDepartamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditarPersona.xaml.cs">
+      <DependentUpon>EditarPersona.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -147,6 +157,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\drawables\pepeenter.gif" />
+    <Content Include="Assets\drawables\titulo.PNG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -161,7 +173,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\Crear.xaml">
+    <Page Include="Views\CrearDepartamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CrearPersona.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,7 +185,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Editar.xaml">
+    <Page Include="Views\EditarDepartamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditarPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

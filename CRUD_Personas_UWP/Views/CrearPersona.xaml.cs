@@ -20,24 +20,11 @@ namespace CRUD_Personas_UWP.Views
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class PersonasView : Page
+    public sealed partial class CrearPersona : Page
     {
-        public PersonasView()
+        public CrearPersona()
         {
-                this.InitializeComponent();   
-        }
-
-        private void ClickCreate(object sender, RoutedEventArgs e)
-        {
-           this.Frame.Navigate(typeof(CrearPersona));
-        }
-
-        private void ClickEdit(object sender, RoutedEventArgs e)
-        {
-            if (lsvPersonas.SelectedItem != null)
-            {
-                this.Frame.Navigate(typeof(EditarPersona), lsvPersonas.SelectedItem);
-            }
+            this.InitializeComponent();
         }
     }
 }
