@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "meow5KpaAN0fwLA59xe0wdxU+vrV5IK897bdN/9UM8bQBs8H1DtL+1YF84Zsys0vSuZmBXY7Sxq9BvVQ+/j2qA==",
+  "dgSpecHash": "prVfgtNb+lW3eVqrUenvoYjUIApzbGZf22n8+I6CRpFFQaN2IAoPtOLOMufk682BcyfLz2QnIM26x531sW9egw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsantos\\Desktop\\CRUD_Personas\\CRUD_Personas_ASP\\CRUD_Personas_ASP.csproj",
   "expectedPackageFiles": [
@@ -120,7 +120,8 @@
     "C:\\Users\\jsantos\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\jsantos\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\jsantos\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\jsantos\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\jsantos\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\jsantos\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }
