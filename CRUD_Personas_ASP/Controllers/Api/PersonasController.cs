@@ -3,6 +3,10 @@ using CRUD_Personas_Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using CRUD_Personas_BL.Gestoras;
+using System.Collections.ObjectModel;
+using System;
+using System.Web.Http;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,14 +20,44 @@ namespace CRUD_Personas_ASP.Api
         [HttpGet]
         public IEnumerable<clsPersona> Get()
         {
-            return new clsListadoPersonasBL().Personas;
+            ObservableCollection<clsPersona> people;
+
+            try
+            {
+                people = new clsListadoPersonasBL().Personas;
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (people == null || people.Count == 0)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+            return people;
         }
 
         // GET api/<Personas>/5
         [HttpGet("{id}")]
         public clsPersona Get(int id)
         {
-            return new clsListadoPersonasBL(id).Persona;
+            clsPersona person;
+
+            try
+            {
+                person = new clsListadoPersonasBL(id).Persona;
+            }
+            catch (Exception e)
+            {
+                throw new HttpResponseException(HttpStatusCode.ServiceUnavailable);
+            }
+
+            if (person == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NoContent);
+            }
+            return person;
         }
 
         // POST api/<Personas>
